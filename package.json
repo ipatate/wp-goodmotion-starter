@@ -11,8 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/ipatate/wp-goodmotion-starter.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "WordPress",
+    "Theme"
+  ],
+  "author": "Faramaz Patrick<info@goodmotion.fr>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ipatate/wp-goodmotion-starter/issues"
@@ -20,9 +23,13 @@
   "homepage": "https://github.com/ipatate/wp-goodmotion-starter#readme",
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.2",
+    "@wordpress/browserslist-config": "^4.0.0",
+    "@wordpress/eslint-plugin": "^9.0.5",
     "autoprefixer": "^10.2.5",
     "cross-env": "^7.0.3",
     "postcss": "^8.3.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-wordpress": "^17.0.0",
     "tailwindcss": "^2.1.2",
     "vite": "^2.3.4",
     "vite-plugin-live-reload": "^2.1.0"
@@ -30,5 +37,8 @@
   "dependencies": {
     "axios": "^0.21.1",
     "vue": "^3.0.11"
-  }
+  },
+  "browserslist": [
+    "extends @wordpress/browserslist-config"
+  ]
 }

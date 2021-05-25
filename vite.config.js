@@ -5,7 +5,7 @@ const { resolve } = require('path')
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
-        liveReload(__dirname+'/**/*.php')
+        liveReload([__dirname+'/**/*.php', __dirname+'/**/*.twig'])
     ],
     root: '',
     build: {
@@ -13,7 +13,7 @@ export default defineConfig({
         outDir: resolve(__dirname, 'dist'),
         emptyOutDir: true,
         manifest: true,
-        target: 'es2018',
+        target: 'es5',
         rollupOptions: {
             input: resolve(__dirname, 'main.js'),
         }
