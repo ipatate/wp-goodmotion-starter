@@ -1,0 +1,30 @@
+{
+  "name": "wp-goodmotion-starter",
+  "version": "0.0.1",
+  "description": "Wordpress starter",
+  "main": "index.js",
+  "scripts": {
+    "dev": "APP_ENV=development vite",
+    "build": "APP_ENV=production vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ipatate/wp-goodmotion-starter.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ipatate/wp-goodmotion-starter/issues"
+  },
+  "homepage": "https://github.com/ipatate/wp-goodmotion-starter#readme",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.2",
+    "vite": "^2.3.4",
+    "vite-plugin-live-reload": "^2.1.0"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "vue": "^3.0.11"
+  }
+}
