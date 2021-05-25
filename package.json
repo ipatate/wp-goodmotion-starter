@@ -4,7 +4,7 @@
   "description": "Wordpress starter",
   "main": "index.js",
   "scripts": {
-    "dev": "APP_ENV=development vite",
+    "dev": "cross-env APP_ENV=development vite",
     "build": "APP_ENV=production vite build"
   },
   "repository": {
@@ -20,6 +20,10 @@
   "homepage": "https://github.com/ipatate/wp-goodmotion-starter#readme",
   "devDependencies": {
     "@vitejs/plugin-vue": "^1.2.2",
+    "autoprefixer": "^10.2.5",
+    "cross-env": "^7.0.3",
+    "postcss": "^8.3.0",
+    "tailwindcss": "^2.1.2",
     "vite": "^2.3.4",
     "vite-plugin-live-reload": "^2.1.0"
   },
