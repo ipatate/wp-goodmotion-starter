@@ -20,6 +20,7 @@ if ( file_exists( $composer_autoload ) ) {
 }
 
 require_once(dirname(__FILE__) . '/inc/assets.php');
+require_once(dirname(__FILE__) . '/inc/disable.php');
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.

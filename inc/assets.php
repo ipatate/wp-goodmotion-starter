@@ -85,5 +85,17 @@ function enqueue_styles()
 
 
 
+/**
+ * Completely Remove jQuery From WordPress if not admin and is not connected
+ */
+function removeJquery()
+{
+    if (!is_admin() && !is_user_logged_in()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', false);
+    }
+}
+
+add_action('init', __NAMESPACE__ . '\removeJquery');
 add_action('init', __NAMESPACE__ . '\enqueue_scripts');
 add_action('init', __NAMESPACE__ . '\enqueue_styles');
