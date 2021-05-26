@@ -1,0 +1,13 @@
+/**
+#editor .block-editor-block-list__layout > .wp-block {
+    @import "tailwindcss/base";
+    @import "tailwindcss/components";
+    @import "tailwindcss/utilities";
+}
+*/
+
+.wp-block-quote {
+  --tw-text-opacity: 1;
+  color: rgba(219, 234, 254, var(--tw-text-opacity))
+}
+

@@ -19,9 +19,6 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
-require_once(dirname(__FILE__) . '/inc/assets.php');
-require_once(dirname(__FILE__) . '/inc/disable.php');
-
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate
@@ -144,6 +141,10 @@ class StarterSite extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
+
+        require_once(dirname(__FILE__) . '/inc/assets.php');
+        require_once(dirname(__FILE__) . '/inc/editor.php');
+        require_once(dirname(__FILE__) . '/inc/disable.php');
 	}
 
 	/** This Would return 'foo bar!'.

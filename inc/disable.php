@@ -12,7 +12,7 @@ function remove_wp_block_library_css(){
 }
 
 
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_wp_block_library_css', 100 );
+//add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_wp_block_library_css', 100 );
 
 
 

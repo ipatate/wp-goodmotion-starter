@@ -43,7 +43,20 @@ function enqueue_scripts()
                 return $tag;
             } , 10, 3);
 
-            wp_enqueue_script('goodmotion-starter-theme', 'http://localhost:3000/main.js');
+            wp_enqueue_script('goodmotion-starter-theme', 'http://localhost:3000/main.js', [
+//                'wp-block-editor',
+//                'wp-blocks',
+//                'wp-editor',
+//                'wp-components',
+//                'wp-compose',
+//                'wp-data',
+//                'wp-element',
+//                'wp-hooks',
+//                'wp-i18n',
+//                'wp-blocks',
+//                'wp-i18n',
+//                'wp-element',
+            ]);
 
         }
 
@@ -58,9 +71,8 @@ function enqueue_styles()
 {
     add_action(
         'wp_enqueue_scripts',
-        function () {
+    function () {
             $path = get_template_directory_uri();
-
             if (WP_ENV !== 'development') {
                 // get file name from manifest
                 $config = getManifest();
@@ -90,12 +102,15 @@ function enqueue_styles()
  */
 function removeJquery()
 {
-    if (!is_admin() && !is_user_logged_in()) {
+    if ($GLOBALS['pagenow'] !== 'wp-login.php' && !is_admin() && !is_user_logged_in()) {
         wp_deregister_script('jquery');
         wp_register_script('jquery', false);
     }
 }
 
+
 add_action('init', __NAMESPACE__ . '\removeJquery');
 add_action('init', __NAMESPACE__ . '\enqueue_scripts');
 add_action('init', __NAMESPACE__ . '\enqueue_styles');
+
+
