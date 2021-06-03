@@ -1,10 +1,8 @@
 module.exports = {
+  mode: "jit",
   purge: [
-    "./**/*.php",
-    "./**/*.twig",
-    "./**/*.js",
-    "../../plugins/**/*.php",
-    "../../plugins/**/*.js",
+    "./**/*.{js,jsx,ts,tsx,vue,php,twig,html}",
+    "../../plugins/**/*.{js,jsx,ts,tsx,vue,php,twig,html}",
   ],
 
   darkMode: false, // or 'media' or 'class'

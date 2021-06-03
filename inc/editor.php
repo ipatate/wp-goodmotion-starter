@@ -56,8 +56,10 @@ function gutenberg_settings() {
     add_theme_support( 'disable-custom-gradients' );
     add_theme_support( 'disable-custom-font-sizes' );
     add_theme_support( 'align-wide' );
-    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'core-block-patterns' );
     add_theme_support( 'responsive-embeds' );
+//    add_theme_support( 'custom-line-height' );
+    add_theme_support( 'wp-block-styles' );
 }
 
 

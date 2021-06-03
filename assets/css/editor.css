@@ -4,6 +4,10 @@
 /*    @import "tailwindcss/components";*/
 /*    @import "tailwindcss/utilities";*/
 /*}*/
+/*body {*/
+/*    background-color: #d3ebf3;*/
+/*    color: #00005d;*/
+/*}*/
 
 .wp-block-quote {
     @apply text-blue-100
