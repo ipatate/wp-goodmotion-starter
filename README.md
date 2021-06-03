@@ -28,3 +28,10 @@ For build assets:
 ```
 npm run build
 ```
+
+
+## assets in CSS
+
+use ```/assets/image.jpg``` instead of ```./assets/image.jpg```
+
+Vite add a base path to asset on build.
