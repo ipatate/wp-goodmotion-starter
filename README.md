@@ -17,6 +17,18 @@ Define environment variable :
 define('WP_ENV', 'development'); // or production
 ```
 
+## development requirement
+
+Use or install node.js on your local machine.  
+This project use npm and node for compile assets.
+
+For install dependencies :
+
+```bash
+npm install
+```
+
+
 ## npm scripts
 
 For start development :
@@ -28,6 +40,22 @@ For build assets:
 ```
 npm run build
 ```
+
+## Gutenberg editor
+
+For admin editor, a css file is generated on build.  
+Use the ```assets/css/editor.css``` file for add style.
+
+The command is run on build but you can generate separately:
+
+```
+npm run build:editor
+```
+or
+```
+npm run watch:editor
+```
+
 
 
 ## assets in CSS
