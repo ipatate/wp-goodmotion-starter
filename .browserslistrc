@@ -1,0 +1,6 @@
+cover 90% in FR
+last 3 versions
+not ie_mob > 0
+not op_mini all
+not op_mob <= 12.1
+not ie <= 10

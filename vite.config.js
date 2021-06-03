@@ -1,6 +1,6 @@
+import { resolve, sep } from "path";
 import { defineConfig } from "vite";
 import liveReload from "vite-plugin-live-reload";
-const { resolve, dirname, sep } = require("path");
 
 // find theme dir name
 const _path = process.cwd().split(sep);
