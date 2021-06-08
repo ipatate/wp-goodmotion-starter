@@ -79,8 +79,8 @@ function enqueue_styles()
                 $files = get_object_vars($config);
                 // search css key
                 foreach ($files as $key => $value) {
+                    if (property_exists($config->{$key}, 'css')) {
                     $css = $config->{$key}->css;
-                    if ($css) {
                         // $css is array
                         foreach ($css as $file) {
                             $k = explode('.', $file);

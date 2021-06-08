@@ -19,6 +19,12 @@ if ( file_exists( $composer_autoload ) ) {
 	$timber = new Timber\Timber();
 }
 
+require_once(dirname(__FILE__) . '/inc/assets.php');
+require_once(dirname(__FILE__) . '/inc/editor.php');
+require_once(dirname(__FILE__) . '/inc/disable.php');
+require_once(dirname(__FILE__) . '/inc/menu.php');
+require_once(dirname(__FILE__) . '/inc/text_domain.php');
+
 /**
  * This ensures that Timber is loaded and available as a PHP class.
  * If not, it gives an error message to help direct developers on where to activate
@@ -81,11 +87,11 @@ class StarterSite extends Timber\Site {
 	 * @param string $context context['this'] Being the Twig's {{ this }}.
 	 */
 	public function add_to_context( $context ) {
-		$context['foo']   = 'bar';
-		$context['stuff'] = 'I am a value set in your functions.php file';
-		$context['notes'] = 'These values are available everytime you call Timber::context();';
-		$context['menu']  = new Timber\Menu();
-		$context['site']  = $this;
+    $context['home_url'] = get_home_url();
+    $context['menu']  = new Timber\Menu('primary');
+    $context['menu_secondary']  = new Timber\Menu('secondary');
+    $context['site']  = $this;
+//    $context['options'] = get_fields('options');
 		return $context;
 	}
 
@@ -141,10 +147,6 @@ class StarterSite extends Timber\Site {
 		);
 
 		add_theme_support( 'menus' );
-
-        require_once(dirname(__FILE__) . '/inc/assets.php');
-        require_once(dirname(__FILE__) . '/inc/editor.php');
-        require_once(dirname(__FILE__) . '/inc/disable.php');
 	}
 
 	/** This Would return 'foo bar!'.

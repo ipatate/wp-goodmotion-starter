@@ -1,4 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Handler when the DOM is fully loaded
-    console.log('js executed...');
-});
+import initNav from './navigation'
+
+function main() {
+  // nav
+  initNav()
+}
+document.addEventListener('DOMContentLoaded', () => {
+  main()
+})

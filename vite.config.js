@@ -19,7 +19,7 @@ export default defineConfig({
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
     manifest: true,
-    target: 'es5',
+    target: 'es2015',
     rollupOptions: {
       input: resolve(__dirname, 'main.js'),
     },

@@ -1,10 +1,18 @@
-{% if menu %}
-	<ul>
-	{% for item in items %}
-		<li class="{{ item.classes | join(' ') }}">
-			<a target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
-			{% include "menu.twig" with {'items': item.children} %}
-		</li>
-	{% endfor %}
-	</ul>
+{% if menu and items %}
+<ul {% if id %} aria-labelledby="gm-nav-{{ id }}" {% endif %} {% if isChildren %} aria-hidden="true" tabindex="-1" {% endif %}>
+  {% if firstItem %}
+  {{ firstItem|raw }}
+  {% endif %}
+  {% for item in items %}
+  <li class="{{ item.classes | join(' ') }}">
+    <a href="{{ item.link }}" id="gm-nav-{{ item.id }}" {% if item.current %}aria-current="page" {% elseif item.current_item_parent %}aria-current="true" {% endif %} {% if item.children|length > 0 %}aria-expanded="false" aria-haspopup="true"{% endif %}>
+    {% if item.link == home_url or item.link == home_url ~ '/' %}<span>{{ item.title }}</span>{% else %}{{ item.title }}{% endif %}
+    </a>
+    {% set firstItem %}
+    <li class="{{ item.classes | join(' ') | replace({'menu-item-has-children': ''}) ~ 'gm-hide-desktop' }}"><a href="{{ item.link }}" {% if item.current %}aria-current="page" {% elseif item.current_item_parent %}aria-current="true" {% endif %}>{{ item.title }}</a></li>
+    {% endset %}
+    {% include "menu.twig" with {'items': item.children, 'isChildren': true, firstItem: firstItem, id : item.id } %}
+  </li>
+  {% endfor %}
+</ul>
 {% endif %}

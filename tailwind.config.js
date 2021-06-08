@@ -1,16 +1,35 @@
 module.exports = {
-  mode: "jit",
+  mode: 'jit',
   purge: [
-    "./**/*.{js,jsx,ts,tsx,vue,php,twig,html}",
-    "../../plugins/**/*.{js,jsx,ts,tsx,vue,php,twig,html}",
+    './**/*.{js,jsx,ts,tsx,vue,php,twig,html}',
+    '../../plugins/**/*.{js,jsx,ts,tsx,vue,php,twig,html}',
   ],
-
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    fontFamily: {
+      sans: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
+      display: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
+      body: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
+    },
+    extend: {
+      backgroundImage: (theme) => ({
+        'down-nav': "url('/assets/media/down.svg')",
+        'down-nav-mobile': "url('/assets/media/arrow-left.svg')",
+      }),
+      colors: {
+        accent: '#450B40',
+      },
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.800'),
+          },
+        },
+      }),
+    },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
-};
+  plugins: [require('@tailwindcss/typography')],
+}

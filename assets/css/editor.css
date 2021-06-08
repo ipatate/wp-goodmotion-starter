@@ -9,7 +9,5 @@
 /*    color: #00005d;*/
 /*}*/
 
-.wp-block-quote {
-    @apply text-blue-100
-}
-
+/** BLOCK **/
+@import "blocks/blocks-editor.css";

@@ -1,0 +1,7 @@
+p {
+  @apply prose md:prose-xl my-3;
+}
+
+.has-drop-cap:not(:focus):first-letter {
+  @apply float-left text-6xl md:text-8xl uppercase font-bold leading-10 pt-2 md:pt-3 px-2 m-0;
+}

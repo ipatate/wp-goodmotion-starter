@@ -1,0 +1,137 @@
+/**
+ * burger btn
+ */
+.gm-nav-button {
+  @apply flex items-center mx-4 ml-auto lg:ml-0 lg:hidden;
+}
+
+.gm-burger {
+  @apply z-30 flex items-center cursor-pointer relative w-10 h-10 bg-transparent transform;
+}
+.gm-burger span {
+  @apply block absolute left-0 w-full h-2 bg-white transform transition;
+}
+
+.gm-burger span:nth-child(1) {
+  @apply top-0 origin-left;
+}
+
+.gm-burger span:nth-child(2) {
+  @apply top-4;
+}
+
+.gm-burger span:nth-child(3) {
+  @apply bottom-0 origin-left;
+}
+
+/** transform to cross */
+.gm-nav-open .gm-burger span {
+  @apply bg-accent;
+}
+
+.gm-nav-open .gm-burger span:nth-child(1) {
+  @apply w-[3.2rem] rotate-45 -top-0.5 left-0.5;
+}
+
+.gm-nav-open .gm-burger span:nth-child(2) {
+  @apply w-0 opacity-0;
+}
+
+.gm-nav-open .gm-burger span:nth-child(3) {
+  @apply w-[3.2rem] -rotate-45 -bottom-0.5 left-0.5;
+}
+
+/**
+ * Navigation
+ */
+
+.gm-nav-main {
+  @apply fixed top-0 left-0 right-0 flex justify-center lg:items-center bg-white
+  shadow-lg h-[0px] max-h-[0px] overflow-hidden opacity-0 mx-auto w-full
+  lg:items-stretch lg:bg-transparent flex-1 z-30 transition lg:relative lg:h-auto
+  lg:overflow-visible lg:opacity-100 lg:max-h-full;
+}
+
+/** first level */
+.gm-nav-main > ul {
+  @apply flex flex-col lg:flex-row justify-start items-stretch w-full;
+}
+
+.gm-nav-main > ul > li {
+  @apply relative my-0 mx-0 lg:m-4 flex items-start flex-col lg:flex-row border-b border-gray-200 lg:items-center lg:border-0;
+}
+
+/** first link show only on mobile when it has children's */
+.gm-nav-main li.gm-hide-desktop {
+  @apply block lg:hidden;
+}
+
+/** second level */
+.gm-nav-main ul > li > ul {
+  @apply max-w-full max-h-[80vh] overflow-y-auto overflow-x-hidden;
+  @apply absolute flex-col lg:overflow-visible opacity-0 hidden top-10 bg-accent min-w-[8rem] shadow-xl transform transition;
+}
+
+/** link */
+.gm-nav-main a {
+  @apply block text-2xl w-full text-accent py-4 lg:py-2 px-4 whitespace-nowrap lg:focus:underline;
+  @apply lg:text-base lg:text-white lg:w-auto;
+}
+
+.gm-nav-main .current-menu-item > a {
+  @apply flex items-center;
+}
+
+.gm-nav-main .current-menu-parent > a {
+  /*@apply font-bold;*/
+}
+
+/** first level links */
+.gm-nav-main ul > li.menu-item-has-children > a {
+  @apply flex items-center;
+}
+
+/** arrow down when it has children's */
+.gm-nav-main ul > li.menu-item-has-children > a::after {
+  @apply flex items-center w-4 h-2 ml-3 bg-down-nav bg-no-repeat hidden lg:flex;
+  content: '';
+}
+
+.gm-nav-main ul > li.menu-item-has-children::after {
+  @apply absolute right-0 flex items-center w-10 h-10 mt-3 bg-down-nav-mobile bg-no-repeat transition lg:hidden transform;
+  content: '';
+}
+
+/** link when children's are show */
+.gm-nav-main ul > li.menu-item-has-children:hover > a,
+.gm-nav-main ul > li.menu-item-has-children.is-collapsed > a {
+  /*@apply font-bold;*/
+}
+
+/** show children's on hover */
+.gm-nav-main ul > li.menu-item-has-children:hover > ul,
+.gm-nav-main ul > li.menu-item-has-children.is-collapsed > ul {
+  @apply lg:flex lg:visible lg:opacity-100;
+}
+
+/** nav is open */
+.gm-nav-main-open {
+  @apply flex opacity-100 overflow-visible h-screen max-h-screen overflow-y-auto pt-20;
+}
+
+.gm-nav-main-open ul > li.is-opened > ul {
+  @apply flex relative w-screen max-w-full top-0 max-h-full opacity-100 shadow-none
+}
+
+/** open second level nav on mobile nav */
+.gm-nav-main-open ul > li.menu-item-has-children.is-opened::after {
+  @apply rotate-90;
+}
+
+.gm-nav-main-open ul > li > ul > li {
+  @apply flex w-full m-0 p-0 bg-gray-50 border-t border-gray-200;
+}
+
+.gm-nav-main-open ul > li > ul > li a {
+    @apply w-full text-left md:text-center;
+}

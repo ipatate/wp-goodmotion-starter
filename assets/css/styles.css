@@ -1,10 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
+@import "./settings/fonts.css";
 @import "tailwindcss/utilities";
+@import "./settings/variables.css";
 
+@import './shared.css';
 
-.article-h1 {
-    @apply text-6xl;
-}
+@import "components/components.css";
+
+/** BLOCK **/
+@import "blocks/blocks.css";
 
 
