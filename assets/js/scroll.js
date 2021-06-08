@@ -2,6 +2,7 @@ let posY = 0
 const body = document.body
 const initHeader = () => {
   window.addEventListener('scroll', scrollDirectionChange)
+  scrollDirectionChange()
 }
 
 const scrollDirectionChange = () => {
@@ -18,9 +19,11 @@ const scrollDirectionChange = () => {
     }
     posY = _posY
     if (newMove === 'UP' && _posY > 200) {
-      return list.add('page-isup')
+      list.add('page-isup')
     } else if (_posY > 200) {
       list.remove('page-isup')
+    } else {
+      list.add('page-isup')
     }
   })
 }

@@ -20,7 +20,7 @@
 
 /** page on top */
 .page-istop .gm-header .gm-logo {
-  @apply bg-logo;
+  @apply lg:bg-logo;
 }
 
 .page-istop .gm-header {
