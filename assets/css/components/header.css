@@ -1,8 +1,32 @@
 .gm-header {
-  @apply flex;
-  background-color: var(--header-bg-color);
+  @apply flex bg-accent shadow-lg max-w-full px-2 py-6 xl:px-8 xl:py-6 fixed z-20 left-0 right-0 transform transition duration-500 translate-y-0 lg:-translate-y-full;
 }
 
 .gm-header .wrapper {
   @apply flex w-full items-stretch;
+}
+
+.gm-header .gm-logo {
+  @apply relative flex z-10 w-[300px] h-14 md:w-[350px] md:h-20 ml-2 my-0 bg-contain bg-logo-white bg-no-repeat;
+}
+
+.gm-header .gm-logo a {
+  @apply flex-1;
+}
+
+.gm-header .gm-logo span {
+  @apply absolute top-[-1000px] left-[-1000px];
+}
+
+/** page on top */
+.page-istop .gm-header .gm-logo {
+  @apply bg-logo;
+}
+
+.page-istop .gm-header {
+  @apply bg-accent lg:bg-transparent;
+}
+
+.page-isup .gm-header {
+  @apply translate-y-0;
 }

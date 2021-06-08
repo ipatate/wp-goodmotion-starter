@@ -15,6 +15,8 @@ module.exports = {
       backgroundImage: (theme) => ({
         'down-nav': "url('/assets/media/down.svg')",
         'down-nav-mobile': "url('/assets/media/arrow-left.svg')",
+        logo: "url('/assets/media/logo_mercredi.png')",
+        'logo-white': "url('/assets/media/logo_mercredi_blanc.png')",
       }),
       colors: {
         accent: '#450B40',

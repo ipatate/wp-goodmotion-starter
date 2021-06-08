@@ -47,7 +47,7 @@
 
 .gm-nav-main {
   @apply fixed top-0 left-0 right-0 flex justify-center lg:items-center bg-white
-  shadow-lg h-[0px] max-h-[0px] overflow-hidden opacity-0 mx-auto w-full
+  h-[0px] max-h-[0px] overflow-hidden opacity-0 mx-auto w-full
   lg:items-stretch lg:bg-transparent flex-1 z-30 transition lg:relative lg:h-auto
   lg:overflow-visible lg:opacity-100 lg:max-h-full;
 }
@@ -116,7 +116,7 @@
 
 /** nav is open */
 .gm-nav-main-open {
-  @apply flex opacity-100 overflow-visible h-screen max-h-screen overflow-y-auto pt-20;
+  @apply flex opacity-100 overflow-visible h-screen max-h-screen overflow-y-auto pt-24;
 }
 
 .gm-nav-main-open ul > li.is-opened > ul {
@@ -134,4 +134,13 @@
 
 .gm-nav-main-open ul > li > ul > li a {
     @apply w-full text-left md:text-center;
+}
+
+/** page on top */
+.page-istop .gm-nav-main ul > li > ul {
+  @apply bg-white;
+}
+
+.page-istop .gm-nav-main a {
+  @apply text-accent;
 }

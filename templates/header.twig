@@ -1,8 +1,8 @@
 <header class="gm-header" >
   {% block header %}
     <div class="wrapper">
-      <h1 class="hdr-logo" role="banner">
-        <a class="hdr-logo-link" href="{{site.url}}" rel="home">{{site.name}}</a>
+      <h1 class="gm-logo" role="banner">
+        <a class="gm-logo-link" href="{{site.url}}" rel="home"><span>{{site.name}}</span></a>
       </h1>
       <nav id="nav-main" class="gm-nav-main" role="navigation" aria-label="{{ __('Primary nav', 'goodmotion-theme') }}">
         {% include "menu.twig" with {'items': menu.get_items, 'home_url': home_url} %}
