@@ -45,6 +45,7 @@
     "@tailwindcss/typography": "^0.4.1",
     "axios": "^0.21.1",
     "postcss-preset-env": "^6.7.0",
+    "siema": "^1.5.1",
     "throttle-debounce": "^3.0.1",
     "vue": "^3.0.11"
   },

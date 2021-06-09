@@ -1,0 +1,105 @@
+.gm-hero-container {
+  @apply relative max-w-full w-full overflow-hidden;
+}
+
+.gm-hero-autoplay {
+  @apply inline-flex absolute right-4 md:right-8 mt-3 ml-4 focus:outline-none;
+}
+
+.gm-hero-autoplay span {
+  @apply hidden;
+}
+
+.gm-hero-autoplay::after {
+  @apply flex items-center justify-center bg-contain bg-center bg-no-repeat w-14 h-14;
+  content: '';
+  background-image: url('/assets/media/play.svg');
+}
+
+.gm-hero-autoplay.play::after {
+  @apply bg-no-repeat;
+  background-image: url('/assets/media/pause.svg');
+}
+
+.gm-hero {
+  @apply w-full max-w-full relative;
+}
+
+.gm-hero > div {
+  @apply max-h-screen flex items-center;
+}
+
+.gm-hero > div > div {
+  @apply max-w-full relative;
+}
+
+.gm-hero > div > div::after {
+  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-40;
+  content: '';
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+.gm-home-cell {
+  @apply relative flex justify-center items-center overflow-hidden;
+}
+
+.gm-hero-dot-container {
+  @apply flex items-center justify-center px-4 mt-8 absolute bottom-5 w-full max-w-full z-10;
+}
+
+.gm-hero-dot {
+  @apply w-3 h-3 md:w-4 md:h-4 border border-white rounded-full m-1 cursor-pointer whitespace-nowrap transition focus:outline-none;
+}
+
+.gm-hero-dot span {
+  @apply absolute top-[-1000px];
+}
+
+.gm-hero-dot-current {
+  @apply bg-white w-4 h-4 md:w-5 md:h-5;
+}
+
+.gm-hero-arrow-container {
+  @apply hidden md:flex justify-between w-full px-8 absolute top-[50%] z-10 transform;
+}
+
+.gm-hero-arrow-container button {
+  @apply relative flex items-center justify-center font-medium text-center rounded-full w-12 h-12 bg-white opacity-70 z-10 focus:outline-none;
+}
+
+.gm-hero-arrow-container button:hover {
+  @apply opacity-100 shadow-lg;
+}
+
+.gm-hero-arrow-container button span {
+  @apply absolute top-[-3000px];
+}
+
+.gm-hero-arrow-previous::after {
+  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative;
+  content: "";
+  background-image: url("/assets/media/previous.svg");
+}
+
+.gm-hero-arrow-next::after {
+  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative left-1;
+  content: "";
+  background-image: url("/assets/media/next.svg");
+}
+
+.gm-hero-arrow-container button.gm-arrow-disabled {
+  @apply opacity-20;
+}
+
+.gm-hero-arrow-container button.gm-arrow-disabled:hover {
+  @apply opacity-20 shadow-none;
+}
+
+.gm-hero-arrow-container button.gm-arrow-disabled::after {
+  @apply opacity-20;
+}

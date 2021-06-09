@@ -1,0 +1,66 @@
+{% if post.meta("page_hero")%}
+  <header class="gm-hero-wrapper">
+    <div class="gm-hero-container" data-autoplay="5000" data-arrow="true" data-dot="true">
+      {% set carousel = post.meta('page_hero') %}
+      {% if carousel|length > 1 %}
+        <div role="tablist" class="gm-hero-dot-container">
+          {% for key, item in carousel %}
+            <button
+              role="tab"
+              tabindex="-1"
+              aria-selected="false"
+              aria-controls="carousel-{{ key }}"
+              class="gm-hero-dot"
+            >
+              <span>{{ __("image", "gm-hero") }} {{ key + 1 }}</span>
+            </button>
+          {% endfor %}
+          <button data-play="{{ __("play", "goodmotion-theme") }}" data-pause="{{ __("pause", "cote-gare-1030-theme") }}"
+                  class="gm-hero-autoplay">
+            <span>{{ __("play", "goodmotion-theme") }}</span>
+          </button>
+        </div>
+        <div class="gm-hero-arrow-container">
+          <button class="gm-hero-arrow-previous">
+            <span>{{ __("previous", "goodmotion-theme") }}</span>
+          </button>
+          <button class="gm-hero-arrow-next">
+            <span>{{ __("next", "goodmotion-theme") }}</span>
+          </button>
+        </div>
+      {% endif %}
+      <div class="gm-hero">
+        {% for key, item in carousel %}
+          <div>
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="{{Image(item.image).src|resize(600, 550)}}"
+              />
+              <source
+                media="(max-width: 1000px)"
+                srcset="{{Image(item.image).src|resize(1000, 600)}}"
+              />
+              <img
+                role="tabpanel"
+                class="gm-hero-cell"
+                id="carousel-{{ key }}"
+                src="{{Image(item.image).src|resize(1400, 800)}}"
+                alt="{{ item.image.alt }}"
+              />
+            </picture>
+            {% if item.target_btn %}
+              <div class="gm-hero-btn">
+                <a
+                  href="{{ item.target_btn.url }}"
+                  title="{{ item.target_btn.title }}"
+                >{{ item.target_btn.title }}</a
+                >
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </header>
+{% endif %}
