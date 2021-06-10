@@ -1,25 +1,32 @@
 {% if post.meta("page_hero")%}
   <header class="gm-hero-wrapper">
-    <div class="gm-hero-container" data-autoplay="5000" data-arrow="true" data-dot="true">
+    <div class="gm-hero-container" data-autoplay="5000" data-arrow="{% if post.meta('page_hero_show_arrow') %}true{%
+      else %}false{% endif %}"
+         data-dot="{% if post.meta('page_hero_show_dot') %}true{%
+           else %}false{% endif %}">
       {% set carousel = post.meta('page_hero') %}
       {% if carousel|length > 1 %}
         <div role="tablist" class="gm-hero-dot-container">
-          {% for key, item in carousel %}
-            <button
-              role="tab"
-              tabindex="-1"
-              aria-selected="false"
-              aria-controls="carousel-{{ key }}"
-              class="gm-hero-dot"
-            >
-              <span>{{ __("image", "gm-hero") }} {{ key + 1 }}</span>
-            </button>
-          {% endfor %}
+          {%  if post.meta('page_hero_show_dot') %}
+            {% for key, item in carousel %}
+              <button
+                role="tab"
+                tabindex="-1"
+                aria-selected="false"
+                aria-controls="carousel-{{ key }}"
+                class="gm-hero-dot"
+              >
+                <span>{{ __("image", "gm-hero") }} {{ key + 1 }}</span>
+              </button>
+            {% endfor %}
+          {% endif %}
           <button data-play="{{ __("play", "goodmotion-theme") }}" data-pause="{{ __("pause", "cote-gare-1030-theme") }}"
                   class="gm-hero-autoplay">
             <span>{{ __("play", "goodmotion-theme") }}</span>
           </button>
         </div>
+      {% endif %}
+      {% if carousel|length > 1 and post.meta('page_hero_show_arrow') %}
         <div class="gm-hero-arrow-container">
           <button class="gm-hero-arrow-previous">
             <span>{{ __("previous", "goodmotion-theme") }}</span>
@@ -50,15 +57,24 @@
                 loading="{%  if key == 0 %}eager{% else %}lazy{% endif %}"
               />
             </picture>
-            {% if item.target_btn %}
-              <div class="gm-hero-btn">
+            <div class="hero_content hero_content_show">
+              {% if item.hero_title %}
+                <h2>{{ item.hero_title }}</h2>
+              {% endif %}
+              {% if item.hero_subtitle %}
+                <p>{{ item.hero_subtitle }}</p>
+              {% endif %}
+            {% if item.hero_target_btn %}
+              <div>
                 <a
-                  href="{{ item.target_btn.url }}"
-                  title="{{ item.target_btn.title }}"
-                >{{ item.target_btn.title }}</a
+                  class="gm-btn"
+                  href="{{ item.hero_target_btn.url }}"
+                  title="{{ item.hero_target_btn.title }}"
+                >{{ item.hero_target_btn.title }}</a
                 >
               </div>
             {% endif %}
+            </div>
           </div>
         {% endfor %}
       </div>

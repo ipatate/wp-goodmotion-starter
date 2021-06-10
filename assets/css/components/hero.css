@@ -30,7 +30,7 @@
 }
 
 .gm-hero > div {
-  @apply max-h-screen flex items-center;
+  @apply max-h-screen flex items-start;
 }
 
 .gm-hero > div > div {
@@ -106,4 +106,18 @@
 
 .gm-hero-arrow-container button.gm-arrow-disabled::after {
   @apply opacity-20;
+}
+
+/** content */
+.hero_content {
+  @apply max-w-[80%] lg:max-w-[50%] z-30 flex flex-col items-center md:items-start absolute bottom-[20%] left-[10%] lg:bottom-[30%] xl:bottom-[40%] lg:left-24;
+  animation: fadeIn linear 1s;
+}
+
+.hero_content h2 {
+  @apply font-bold text-white text-3xl md:text-7xl;
+}
+
+.hero_content p {
+  @apply text-white;
 }

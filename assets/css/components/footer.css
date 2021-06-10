@@ -34,7 +34,7 @@
 
 /** bloc social */
 .gm-footer-social {
-  @apply flex flex-col items-center md:items-start
+  @apply flex flex-col items-center
 }
 .gm-footer-social > div:first-child {
   @apply text-2xl font-bold capitalize;

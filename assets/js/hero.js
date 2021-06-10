@@ -116,30 +116,34 @@ export const initHero = () => {
             cell[carousel.currentSlide].setAttribute('aria-hidden', false)
 
             /** btn arrow */
-            previous.setAttribute(
-              'tabindex',
-              carousel.currentSlide > 0 ? '0' : -1,
-            )
-            if (carousel.currentSlide > 0) {
-              previous.removeAttribute('disabled')
-              previous.classList.remove('gm-arrow-disabled')
-            } else {
-              previous.setAttribute('disabled', true)
-              previous.classList.add('gm-arrow-disabled')
-            }
-            if (carousel.currentSlide === countCell - 1) {
-              next.setAttribute('disabled', true)
-              next.classList.add('gm-arrow-disabled')
-            } else {
-              next.removeAttribute('disabled')
-              next.classList.remove('gm-arrow-disabled')
-            }
-
-            if (countCell > 0) {
-              next.setAttribute(
+            if (previous) {
+              previous.setAttribute(
                 'tabindex',
-                carousel.currentSlide !== countCell - 1 ? '0' : -1,
+                carousel.currentSlide > 0 ? '0' : -1,
               )
+              if (carousel.currentSlide > 0) {
+                previous.removeAttribute('disabled')
+                previous.classList.remove('gm-arrow-disabled')
+              } else {
+                previous.setAttribute('disabled', true)
+                previous.classList.add('gm-arrow-disabled')
+              }
+            }
+            if (next) {
+              if (carousel.currentSlide === countCell - 1) {
+                next.setAttribute('disabled', true)
+                next.classList.add('gm-arrow-disabled')
+              } else {
+                next.removeAttribute('disabled')
+                next.classList.remove('gm-arrow-disabled')
+              }
+
+              if (countCell > 0) {
+                next.setAttribute(
+                  'tabindex',
+                  carousel.currentSlide !== countCell - 1 ? '0' : -1,
+                )
+              }
             }
             /** dot */
             if (hasDot === 'true') {

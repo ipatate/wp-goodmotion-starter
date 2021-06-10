@@ -4,8 +4,11 @@
 @import "tailwindcss/utilities";
 @import "./settings/variables.css";
 
+/** GLOBAL */
 @import './shared.css';
+@import "./animation.css";
 
+/** COMPONENTS */
 @import "components/components.css";
 
 /** BLOCK **/
