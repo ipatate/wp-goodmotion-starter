@@ -47,6 +47,7 @@
                 id="carousel-{{ key }}"
                 src="{{Image(item.image).src|resize(1400, 800)}}"
                 alt="{{ item.image.alt }}"
+                loading="{%  if key == 0 %}eager{% else %}lazy{% endif %}"
               />
             </picture>
             {% if item.target_btn %}

@@ -22,6 +22,8 @@ if ( file_exists( $composer_autoload ) ) {
 require_once(dirname(__FILE__) . '/inc/assets.php');
 require_once(dirname(__FILE__) . '/inc/editor.php');
 require_once(dirname(__FILE__) . '/inc/disable.php');
+require_once(dirname(__FILE__) . '/inc/disable_comments.php');
+require_once(dirname(__FILE__) . '/inc/disable_post.php');
 require_once(dirname(__FILE__) . '/inc/menu.php');
 require_once(dirname(__FILE__) . '/inc/text_domain.php');
 

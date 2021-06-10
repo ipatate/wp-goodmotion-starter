@@ -54,11 +54,11 @@
 
 /** first level */
 .gm-nav-main > ul {
-  @apply flex flex-col lg:flex-row justify-start items-stretch w-full;
+  @apply flex flex-col lg:flex-row lg:justify-between items-stretch w-full;
 }
 
 .gm-nav-main > ul > li {
-  @apply relative my-0 mx-0 lg:m-4 flex items-start flex-col lg:flex-row border-b border-gray-200 lg:items-center lg:border-0;
+  @apply relative my-0 mx-0 flex items-start flex-col lg:flex-row lg:border-b border-gray-200 lg:items-center lg:border-none;
 }
 
 /** first link show only on mobile when it has children's */
@@ -68,8 +68,8 @@
 
 /** second level */
 .gm-nav-main ul > li > ul {
-  @apply max-w-full max-h-[80vh] overflow-y-auto overflow-x-hidden;
-  @apply absolute flex-col lg:overflow-visible opacity-0 hidden top-10 bg-accent min-w-[8rem] shadow-xl transform transition;
+  @apply max-h-[80vh] overflow-y-auto overflow-x-hidden;
+  @apply absolute flex-col lg:overflow-visible opacity-0 hidden top-full bg-accent min-w-[8rem] w-max shadow-2xl transform transition;
 }
 
 /** link */
@@ -82,8 +82,12 @@
   @apply flex items-center;
 }
 
-.gm-nav-main .current-menu-parent > a {
-  /*@apply font-bold;*/
+.gm-nav-main ul > li > ul > li:hover {
+  @apply lg:bg-[rgba(254,254,254,0.2)];
+}
+
+.gm-nav-main ul a:hover {
+  @apply lg:text-pink-100;
 }
 
 /** first level links */
@@ -102,12 +106,6 @@
   content: '';
 }
 
-/** link when children's are show */
-.gm-nav-main ul > li.menu-item-has-children:hover > a,
-.gm-nav-main ul > li.menu-item-has-children.is-collapsed > a {
-  /*@apply font-bold;*/
-}
-
 /** show children's on hover */
 .gm-nav-main ul > li.menu-item-has-children:hover > ul,
 .gm-nav-main ul > li.menu-item-has-children.is-collapsed > ul {
@@ -120,7 +118,7 @@
 }
 
 .gm-nav-main-open ul > li.is-opened > ul {
-  @apply flex relative w-screen max-w-full top-0 max-h-full opacity-100 shadow-none
+  @apply flex relative w-screen max-w-full top-0 max-h-full opacity-100 shadow-inner
 }
 
 /** open second level nav on mobile nav */
@@ -129,7 +127,7 @@
 }
 
 .gm-nav-main-open ul > li > ul > li {
-  @apply flex w-full m-0 p-0 bg-gray-50 border-t border-gray-200;
+  @apply flex w-full m-0 pl-4 lg:p-0 bg-gray-50 border-t border-gray-200 lg:border-none;
 }
 
 .gm-nav-main-open ul > li > ul > li a {
@@ -138,9 +136,9 @@
 
 /** page on top */
 .page-istop .gm-nav-main ul > li > ul {
-  @apply bg-white;
+  @apply bg-[rgba(123,123,123,0.6)];
 }
 
 .page-istop .gm-nav-main a {
-  @apply text-accent;
+  @apply text-accent lg:text-white;
 }

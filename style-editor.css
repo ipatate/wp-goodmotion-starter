@@ -537,32 +537,3 @@ p > :last-child {
         line-height: 1;
     }
 }
-h1 {
-    margin-bottom: 1rem;
-    font-size: 3rem;
-    line-height: 1;
-}
-h2 {
-    margin-bottom: 0.5rem;
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-}
-h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-}
-h4 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
-}
-h5 {
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-}
-h6 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
-}

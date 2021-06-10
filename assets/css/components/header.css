@@ -20,11 +20,11 @@
 
 /** page on top */
 .page-istop .gm-header .gm-logo {
-  @apply lg:bg-logo;
+  @apply lg:bg-logo-white;
 }
 
 .page-istop .gm-header {
-  @apply bg-accent lg:bg-transparent;
+  @apply bg-accent lg:bg-[rgba(123,123,123,0.2)];
 }
 
 .page-isup .gm-header {
