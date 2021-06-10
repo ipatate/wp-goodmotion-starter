@@ -1,3 +1,20 @@
+body {
+  @apply bg-gray-50;
+}
+
 .content-wrapper {
   @apply min-h-screen pt-24 lg:pt-0;
+}
+
+/** icon */
+.gm-icon span {
+  @apply absolute top-[-1000px] left-[-1000px];
+}
+
+.gm-facebook-icon {
+  @apply bg-facebook bg-no-repeat bg-contain;
+}
+
+.gm-instagram-icon {
+  @apply bg-instagram bg-no-repeat bg-contain;
 }

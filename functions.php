@@ -26,6 +26,8 @@ require_once(dirname(__FILE__) . '/inc/disable_comments.php');
 require_once(dirname(__FILE__) . '/inc/disable_post.php');
 require_once(dirname(__FILE__) . '/inc/menu.php');
 require_once(dirname(__FILE__) . '/inc/text_domain.php');
+require_once(dirname(__FILE__) . '/inc/acf.php');
+require_once(dirname(__FILE__) . '/inc/acf_config.php');
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.
@@ -93,7 +95,7 @@ class StarterSite extends Timber\Site {
     $context['menu']  = new Timber\Menu('primary');
     $context['menu_secondary']  = new Timber\Menu('secondary');
     $context['site']  = $this;
-//    $context['options'] = get_fields('options');
+    $context['options'] = get_fields('options');
 		return $context;
 	}
 

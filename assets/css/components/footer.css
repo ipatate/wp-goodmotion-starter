@@ -1,0 +1,49 @@
+.gm-footer {
+  @apply bg-accent px-2 lg:px-12 py-8 lg:py-24 w-full flex flex-col-reverse md:flex-row items-stretch text-white min-h-[300px];
+}
+
+.gm-footer > div {
+  @apply flex-1 my-6
+}
+
+/** bloc logo */
+.gm-footer .gm-logo {
+@apply flex flex-row md:flex-col
+}
+
+.gm-footer .gm-logo p {
+  @apply text-sm text-white;
+}
+
+.gm-footer .gm-logo a {
+  @apply relative flex z-10 w-[300px] h-14 md:w-[350px] md:h-20 ml-2 my-0 bg-contain bg-logo-white bg-no-repeat;
+}
+
+.gm-footer .gm-logo a span {
+  @apply absolute top-[-1000px] left-[-1000px];
+}
+
+/** bloc nav */
+.gm-footer .gm-footer-nav {
+  @apply flex flex-col;
+}
+
+.gm-footer .gm-footer-nav a {
+  @apply underline
+}
+
+/** bloc social */
+.gm-footer-social {
+  @apply flex flex-col items-center md:items-start
+}
+.gm-footer-social > div:first-child {
+  @apply text-2xl font-bold capitalize;
+}
+
+.gm-footer-social > div:last-child {
+  @apply flex;
+}
+
+.gm-footer-social a {
+  @apply flex w-8 h-8 m-2;
+}

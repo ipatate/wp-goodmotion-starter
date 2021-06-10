@@ -17,6 +17,8 @@ module.exports = {
         'down-nav-mobile': "url('/assets/media/arrow-left.svg')",
         logo: "url('/assets/media/logo_mercredi.png')",
         'logo-white': "url('/assets/media/logo_mercredi_blanc.png')",
+        instagram: "url('/assets/media/instagram.svg')",
+        facebook: "url('/assets/media/facebook.svg')",
       }),
       colors: {
         accent: '#450B40',

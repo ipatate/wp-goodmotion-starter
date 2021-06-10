@@ -9,10 +9,11 @@
 	<body class="{{body_class}}" data-template="base.twig">
 		<a class="skip-link screen-reader-text font-bold" href="#content">{{ _e( 'Skip to content') }}</a>
     {% include 'header.twig' %}
+        {% include 'partial/hero.twig' %}
 		<section id="content" role="main" class="content-wrapper">
 			{% if title %}<h1>{{title}}</h1>{% endif %}
 			<div class="wrapper {{sidebar_class}}">
-				{% block content %}
+        {% block content %}
 					Sorry, no content
 				{% endblock %}
 			</div>

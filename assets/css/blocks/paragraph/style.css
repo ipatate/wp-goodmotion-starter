@@ -1,5 +1,5 @@
 p {
-  @apply prose md:prose-xl my-3;
+  @apply prose lg:prose-lg max-w-full text-gray-600 my-3;
 }
 
 .has-drop-cap:not(:focus):first-letter {

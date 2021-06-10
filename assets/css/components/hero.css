@@ -1,3 +1,7 @@
+.gm-not-hero {
+  @apply min-h-[200px];
+}
+
 .gm-hero-container {
   @apply relative max-w-full w-full overflow-hidden;
 }
