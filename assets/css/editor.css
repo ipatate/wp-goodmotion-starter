@@ -1,13 +1,8 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "./settings/fonts.css";
+@import "tailwindcss/utilities";
 
-/*#editor .block-editor-block-list__layout > .wp-block {*/
-/*    @import "tailwindcss/base";*/
-/*    @import "tailwindcss/components";*/
-/*    @import "tailwindcss/utilities";*/
-/*}*/
-/*body {*/
-/*    background-color: #d3ebf3;*/
-/*    color: #00005d;*/
-/*}*/
 
 /** BLOCK **/
 @import "blocks/blocks-editor.css";

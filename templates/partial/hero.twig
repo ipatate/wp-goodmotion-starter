@@ -1,6 +1,7 @@
 {% if post.meta("page_hero")%}
   <header class="gm-hero-wrapper">
-    <div class="gm-hero-container" data-autoplay="5000" data-arrow="{% if post.meta('page_hero_show_arrow') %}true{%
+    <div class="gm-hero-container" data-autoplay="{% if post.meta('page_hero_delay') != '' %}{{ post.meta
+      ('page_hero_delay') }}{% else %}7000{% endif %}" data-arrow="{% if post.meta('page_hero_show_arrow') %}true{%
       else %}false{% endif %}"
          data-dot="{% if post.meta('page_hero_show_dot') %}true{%
            else %}false{% endif %}">

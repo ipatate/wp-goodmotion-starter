@@ -1,3 +1,10 @@
 
 @import './paragraph/style.css';
+@import './paragraph/editor.css';
+
 @import './heading/style.css';
+@import './heading/editor.css';
+
+.wp-block, .editor-post-title__input {
+  @apply max-w-4xl;
+}

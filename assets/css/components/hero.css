@@ -37,8 +37,9 @@
   @apply max-w-full relative;
 }
 
+/** mask over picture */
 .gm-hero > div > div::after {
-  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-40;
+  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-60;
   content: '';
   background: rgb(0, 0, 0);
   background: linear-gradient(

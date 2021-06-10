@@ -1,5 +1,5 @@
   h1 {
-    @apply text-5xl mb-2 md:mb-4 text-red-500;
+    @apply text-5xl mb-2 md:mb-4;
   }
 
   h2 {

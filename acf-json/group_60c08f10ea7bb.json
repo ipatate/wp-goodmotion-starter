@@ -137,6 +137,26 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_60c235da17b60",
+            "label": "Carousel delay",
+            "name": "page_hero_delay",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 8000,
+            "min": 5000,
+            "max": 30000,
+            "step": 1000,
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -163,5 +183,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623338652
+    "modified": 1623340595
 }

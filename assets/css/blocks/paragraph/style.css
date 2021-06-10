@@ -1,5 +1,9 @@
 p {
-  @apply prose lg:prose-lg max-w-full text-gray-600 my-3;
+  @apply prose lg:prose-lg text-gray-600 my-3;
+}
+
+.wp-block p {
+  @apply max-w-6xl;
 }
 
 .has-drop-cap:not(:focus):first-letter {
