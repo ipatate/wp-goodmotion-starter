@@ -101,7 +101,7 @@
 
 /** content */
 .hero_content {
-  @apply max-w-[80%] lg:max-w-[50%] z-30 flex flex-col items-center md:items-start absolute bottom-[20%] left-[10%] lg:bottom-[30%] xl:bottom-[40%] lg:left-24;
+  @apply max-w-[80%] w-3/4 z-30 flex flex-col items-center md:items-start absolute top-[50%] left-[50%] transform -translate-x-1/2;
   animation: fadeIn linear 1s;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .hero_content p {
-  @apply text-white;
+  @apply text-white mx-0;
 }
 
 /** button */

@@ -3,7 +3,7 @@ body {
 }
 
 .content-wrapper {
-  @apply min-h-screen pt-0 pb-6;
+  @apply min-h-screen py-6;
 }
 
 /** article page content */

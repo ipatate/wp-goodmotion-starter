@@ -1,3 +1,7 @@
 .has-regular-font-size {
   @apply text-base;
 }
+
+.article-content .has-text-color.has-accent-color, .has-text-color.has-accent-color {
+  @apply text-accent;
+}

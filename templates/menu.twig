@@ -1,5 +1,6 @@
 {% if menu and items %}
-<ul {% if id %} aria-labelledby="gm-nav-{{ id }}" {% endif %} {% if isChildren %} aria-hidden="true" tabindex="-1" {% endif %}>
+<ul {% if id %} aria-labelledby="gm-nav-{{ id }}" {% endif %} {% if isChildren %} aria-hidden="true" tabindex="-1" {%
+  endif %} class="{% if items|length > 5 %}nav-has-lot{% endif %}">
   {% if firstItem %}
   {{ firstItem|raw }}
   {% endif %}

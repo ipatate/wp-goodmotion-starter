@@ -26,9 +26,7 @@ function gutenberg_settings() {
 
     add_theme_support( 'editor-color-palette',
         array(
-            array( 'name' => 'blue', 'slug'  => 'blue', 'color' => '#48ADD8' ),
-            array( 'name' => 'pink', 'slug'  => 'pink', 'color' => '#FF2952' ),
-            array( 'name' => 'green', 'slug'  => 'green', 'color' => '#83BD71' ),
+            array( 'name' => 'accent', 'slug'  => 'accent', 'color' => '#450B40' ),
         )
     );
 
@@ -41,6 +39,7 @@ function gutenberg_settings() {
     add_theme_support( 'core-block-patterns' );
     add_theme_support( 'responsive-embeds' );
 //    add_theme_support( 'custom-line-height' );
+    add_theme_support('disable-custom-font-sizes');
     add_theme_support( 'wp-block-styles' );
 }
 

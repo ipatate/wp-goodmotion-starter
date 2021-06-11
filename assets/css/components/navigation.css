@@ -54,11 +54,19 @@
 
 /** first level */
 .gm-nav-main > ul {
-  @apply flex flex-col lg:flex-row lg:justify-between items-stretch w-full;
+  @apply flex flex-col lg:flex-row lg:justify-start items-stretch w-full;
+}
+
+.gm-nav-main > ul.nav-has-lot {
+  @apply lg:justify-between
 }
 
 .gm-nav-main > ul > li {
-  @apply relative my-0 mx-0 flex items-start flex-col lg:flex-row lg:border-b border-gray-200 lg:items-center lg:border-none;
+  @apply relative my-0 mx-5 flex items-start flex-col lg:flex-row lg:border-b border-gray-200 lg:items-center lg:border-none;
+}
+
+.gm-nav-main > ul.nav-has-lot > li {
+  @apply mx-0;
 }
 
 /** first link show only on mobile when it has children's */
@@ -87,7 +95,7 @@
 }
 
 .gm-nav-main ul a:hover {
-  @apply lg:text-pink-100;
+  @apply lg:text-gray-200;
 }
 
 /** first level links */
