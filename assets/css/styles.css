@@ -7,10 +7,12 @@
 /** GLOBAL */
 @import './shared.css';
 @import "./animation.css";
+@import "./has.css";
 
 /** COMPONENTS */
 @import "components/components.css";
 
 /** BLOCK **/
+@import "blocks/blocks.css";
 
 

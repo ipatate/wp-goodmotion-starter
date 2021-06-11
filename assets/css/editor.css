@@ -5,8 +5,10 @@
 
 
 /** shared */
+@import "./has.css";
+
 body {
-  @apply prose lg:prose-lg xl:prose-xl text-gray-600 mx-auto;
+  @apply prose lg:prose-lg mx-auto max-w-6xl;
 }
 
 

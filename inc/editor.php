@@ -17,29 +17,11 @@ function gutenberg_css(){
 function gutenberg_settings() {
     add_theme_support( 'editor-font-sizes', array(
         array(
-            'name' => __( 'small', 'gm-starter-theme' ),
-            'shortName' => __( 'S', 'gm-starter-theme' ),
-            'size' => 12,
-            'slug' => 'small'
-        ),
-        array(
             'name' => __( 'regular', 'gm-starter-theme' ),
             'shortName' => __( 'M', 'gm-starter-theme' ),
-            'size' => 16,
+            'size' => '1rem',
             'slug' => 'regular'
         ),
-        array(
-            'name' => __( 'large', 'gm-starter-theme' ),
-            'shortName' => __( 'L', 'gm-starter-theme' ),
-            'size' => 36,
-            'slug' => 'large'
-        ),
-        array(
-            'name' => __( 'larger', 'gm-starter-theme' ),
-            'shortName' => __( 'XL', 'gm-starter-theme' ),
-            'size' => 50,
-            'slug' => 'larger'
-        )
     ) );
 
     add_theme_support( 'editor-color-palette',

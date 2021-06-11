@@ -3400,6 +3400,10 @@ video {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 /** shared */
+.has-regular-font-size {
+	font-size: 1rem;
+	line-height: 1.5rem;
+}
 body {
 	color: #1f2937;
 	max-width: 65ch;
@@ -3632,6 +3636,9 @@ body video {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
+body {
+	max-width: 72rem;
+}
 body figure {
 	margin-top: 2em;
 	margin-bottom: 2em;
@@ -3713,10 +3720,6 @@ body > :first-child {
 }
 body > :last-child {
 	margin-bottom: 0;
-}
-body {
-	--tw-text-opacity: 1;
-	color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
 @media (min-width: 1024px) {
 
@@ -3940,246 +3943,6 @@ body {
 		padding-right: 0.75em;
 		padding-bottom: 0.75em;
 		padding-left: 0.75em;
-	}
-
-	body tbody td:first-child {
-		padding-left: 0;
-	}
-
-	body tbody td:last-child {
-		padding-right: 0;
-	}
-
-	body > :first-child {
-		margin-top: 0;
-	}
-
-	body > :last-child {
-		margin-bottom: 0;
-	}
-}
-@media (min-width: 1280px) {
-
-	body {
-		font-size: 1.25rem;
-		line-height: 1.8;
-	}
-
-	body p {
-		margin-top: 1.2em;
-		margin-bottom: 1.2em;
-	}
-
-	body [class~="lead"] {
-		font-size: 1.2em;
-		line-height: 1.5;
-		margin-top: 1em;
-		margin-bottom: 1em;
-	}
-
-	body blockquote {
-		margin-top: 1.6em;
-		margin-bottom: 1.6em;
-		padding-left: 1.0666667em;
-	}
-
-	body h1 {
-		font-size: 2.8em;
-		margin-top: 0;
-		margin-bottom: 0.8571429em;
-		line-height: 1;
-	}
-
-	body h2 {
-		font-size: 1.8em;
-		margin-top: 1.5555556em;
-		margin-bottom: 0.8888889em;
-		line-height: 1.1111111;
-	}
-
-	body h3 {
-		font-size: 1.5em;
-		margin-top: 1.6em;
-		margin-bottom: 0.6666667em;
-		line-height: 1.3333333;
-	}
-
-	body h4 {
-		margin-top: 1.8em;
-		margin-bottom: 0.6em;
-		line-height: 1.6;
-	}
-
-	body img {
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-
-	body video {
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-
-	body figure {
-		margin-top: 2em;
-		margin-bottom: 2em;
-	}
-
-	body figure > * {
-		margin-top: 0;
-		margin-bottom: 0;
-	}
-
-	body figure figcaption {
-		font-size: 0.9em;
-		line-height: 1.5555556;
-		margin-top: 1em;
-	}
-
-	body code {
-		font-size: 0.9em;
-	}
-
-	body h2 code {
-		font-size: 0.8611111em;
-	}
-
-	body h3 code {
-		font-size: 0.9em;
-	}
-
-	body pre {
-		font-size: 0.9em;
-		line-height: 1.7777778;
-		margin-top: 2em;
-		margin-bottom: 2em;
-		border-radius: 0.5rem;
-		padding-top: 1.1111111em;
-		padding-right: 1.3333333em;
-		padding-bottom: 1.1111111em;
-		padding-left: 1.3333333em;
-	}
-
-	body ol {
-		margin-top: 1.2em;
-		margin-bottom: 1.2em;
-	}
-
-	body ul {
-		margin-top: 1.2em;
-		margin-bottom: 1.2em;
-	}
-
-	body li {
-		margin-top: 0.6em;
-		margin-bottom: 0.6em;
-	}
-
-	body ol > li {
-		padding-left: 1.8em;
-	}
-
-	body ol > li::before {
-		left: 0;
-	}
-
-	body ul > li {
-		padding-left: 1.8em;
-	}
-
-	body ul > li::before {
-		width: 0.35em;
-		height: 0.35em;
-		top: calc(0.9em - 0.175em);
-		left: 0.25em;
-	}
-
-	body > ul > li p {
-		margin-top: 0.8em;
-		margin-bottom: 0.8em;
-	}
-
-	body > ul > li > *:first-child {
-		margin-top: 1.2em;
-	}
-
-	body > ul > li > *:last-child {
-		margin-bottom: 1.2em;
-	}
-
-	body > ol > li > *:first-child {
-		margin-top: 1.2em;
-	}
-
-	body > ol > li > *:last-child {
-		margin-bottom: 1.2em;
-	}
-
-	body ul ul, body ul ol, body ol ul, body ol ol {
-		margin-top: 0.8em;
-		margin-bottom: 0.8em;
-	}
-
-	body ul ul, body ul ol, body ol ul, body ol ol {
-		margin-top: 0.8em;
-		margin-bottom: 0.8em;
-	}
-
-	body ul ul, body ul ol, body ol ul, body ol ol {
-		margin-top: 0.8em;
-		margin-bottom: 0.8em;
-	}
-
-	body ul ul, body ul ol, body ol ul, body ol ol {
-		margin-top: 0.8em;
-		margin-bottom: 0.8em;
-	}
-
-	body hr {
-		margin-top: 2.8em;
-		margin-bottom: 2.8em;
-	}
-
-	body hr + * {
-		margin-top: 0;
-	}
-
-	body h2 + * {
-		margin-top: 0;
-	}
-
-	body h3 + * {
-		margin-top: 0;
-	}
-
-	body h4 + * {
-		margin-top: 0;
-	}
-
-	body table {
-		font-size: 0.9em;
-		line-height: 1.5555556;
-	}
-
-	body thead th {
-		padding-right: 0.6666667em;
-		padding-bottom: 0.8888889em;
-		padding-left: 0.6666667em;
-	}
-
-	body thead th:first-child {
-		padding-left: 0;
-	}
-
-	body thead th:last-child {
-		padding-right: 0;
-	}
-
-	body tbody td {
-		padding-top: 0.8888889em;
-		padding-right: 0.6666667em;
-		padding-bottom: 0.8888889em;
-		padding-left: 0.6666667em;
 	}
 
 	body tbody td:first-child {

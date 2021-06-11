@@ -27,6 +27,10 @@
   @apply bg-accent lg:bg-[rgba(123,123,123,0.2)];
 }
 
+.no-hero.page-istop .gm-header {
+  @apply lg:bg-accent;
+}
+
 .page-isup .gm-header {
   @apply translate-y-0;
 }

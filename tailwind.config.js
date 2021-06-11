@@ -19,6 +19,10 @@ module.exports = {
         'logo-white': "url('/assets/media/logo_mercredi_blanc.png')",
         instagram: "url('/assets/media/instagram.svg')",
         facebook: "url('/assets/media/facebook.svg')",
+        play: "url('/assets/media/play.svg')",
+        pause: "url('/assets/media/pause.svg')",
+        previous: "url('/assets/media/previous.svg')",
+        next: "url('/assets/media/next.svg')",
       }),
       colors: {
         accent: '#450B40',

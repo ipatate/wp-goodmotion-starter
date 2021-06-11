@@ -4,7 +4,9 @@
 	<div class="content-wrapper">
 		<article class="post-type-{{post.post_type}}" id="post-{{post.ID}}">
 			<section class="article-content">
-				<h1 class="article-h1">{{post.title}}</h1>
+        {% if post.meta('page_show_title') == true %}
+				  <h1 class="article-h1">{{post.title}}</h1>
+        {% endif %}
 				<div class="article-body">
 					{{post.content}}
 				</div>

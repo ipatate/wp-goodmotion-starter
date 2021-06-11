@@ -1,0 +1,15 @@
+h1, h2, h3, h4, h5, h6, p, ul, ol,blockquote, pre, figure {
+  @apply mx-auto max-w-6xl;
+}
+
+.wp-block-quote {
+  @apply mx-auto
+}
+
+.wp-block-pullquote {
+  @apply border-none mx-auto;
+}
+
+.wp-block-table {
+  @apply mx-auto
+}

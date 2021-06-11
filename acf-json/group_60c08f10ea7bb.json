@@ -1,6 +1,6 @@
 {
     "key": "group_60c08f10ea7bb",
-    "title": "Hero",
+    "title": "Hero settings",
     "fields": [
         {
             "key": "field_60c08f183d044",
@@ -171,7 +171,7 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "home.php"
+                "value": "default"
             }
         ]
     ],
@@ -183,5 +183,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623340595
+    "modified": 1623405428
 }

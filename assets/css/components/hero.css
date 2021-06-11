@@ -1,5 +1,5 @@
 .gm-not-hero {
-  @apply min-h-[200px];
+  @apply min-h-[130px] md:min-h-[170px];
 }
 
 .gm-hero-container {
@@ -7,7 +7,7 @@
 }
 
 .gm-hero-autoplay {
-  @apply inline-flex absolute right-4 md:right-8 mt-3 ml-4 focus:outline-none;
+  @apply inline-flex absolute right-4 md:right-8 ml-4 focus:outline-none;
 }
 
 .gm-hero-autoplay span {
@@ -15,14 +15,12 @@
 }
 
 .gm-hero-autoplay::after {
-  @apply flex items-center justify-center bg-contain bg-center bg-no-repeat w-14 h-14;
+  @apply flex items-center justify-center bg-contain bg-center bg-no-repeat w-14 h-14 bg-play;
   content: '';
-  background-image: url('/assets/media/play.svg');
 }
 
 .gm-hero-autoplay.play::after {
-  @apply bg-no-repeat;
-  background-image: url('/assets/media/pause.svg');
+  @apply bg-no-repeat bg-pause;
 }
 
 .gm-hero {
@@ -39,14 +37,8 @@
 
 /** mask over picture */
 .gm-hero > div > div::after {
-  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-60;
+  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-40 bg-gradient-to-b from-gray-800 to-transparent;
   content: '';
-  background: rgb(0, 0, 0);
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(255, 255, 255, 0.2) 100%
-  );
 }
 
 .gm-home-cell {
@@ -86,15 +78,13 @@
 }
 
 .gm-hero-arrow-previous::after {
-  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative;
+  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative bg-previous;
   content: "";
-  background-image: url("/assets/media/previous.svg");
 }
 
 .gm-hero-arrow-next::after {
-  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative left-1;
+  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative left-1 bg-next;
   content: "";
-  background-image: url("/assets/media/next.svg");
 }
 
 .gm-hero-arrow-container button.gm-arrow-disabled {
@@ -116,9 +106,14 @@
 }
 
 .hero_content h2 {
-  @apply font-bold text-white text-3xl md:text-7xl;
+  @apply font-bold text-white text-3xl md:text-7xl mx-0 mb-3;
 }
 
 .hero_content p {
   @apply text-white;
+}
+
+/** button */
+.hero_content > div {
+  @apply my-4;
 }
