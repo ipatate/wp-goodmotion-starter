@@ -4,5 +4,11 @@
 @import "tailwindcss/utilities";
 
 
-/** BLOCK **/
+/** shared */
+body {
+  @apply prose lg:prose-lg xl:prose-xl text-gray-600 mx-auto;
+}
+
+
+/** BLOCK */
 @import "blocks/blocks-editor.css";

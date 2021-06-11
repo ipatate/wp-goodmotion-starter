@@ -3387,6 +3387,9 @@ video {
 .duration-200 {
 	transition-duration: 200ms;
 }
+.ease-out {
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
 .ease {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -3396,77 +3399,74 @@ video {
 .ease-in-out {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.ease-out {
-	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-}
-/** BLOCK **/
-p {
+/** shared */
+body {
 	color: #1f2937;
 	max-width: 65ch;
 }
-p [class~="lead"] {
+body [class~="lead"] {
 	color: #4b5563;
 	font-size: 1.25em;
 	line-height: 1.6;
 	margin-top: 1.2em;
 	margin-bottom: 1.2em;
 }
-p a {
+body a {
 	color: #111827;
 	text-decoration: underline;
 	font-weight: 500;
 }
-p strong {
+body strong {
 	color: #111827;
 	font-weight: 600;
 }
-p ol[type="A"] {
+body ol[type="A"] {
 	--list-counter-style: upper-alpha;
 }
-p ol[type="a"] {
+body ol[type="a"] {
 	--list-counter-style: lower-alpha;
 }
-p ol[type="A" s] {
+body ol[type="A" s] {
 	--list-counter-style: upper-alpha;
 }
-p ol[type="a" s] {
+body ol[type="a" s] {
 	--list-counter-style: lower-alpha;
 }
-p ol[type="I"] {
+body ol[type="I"] {
 	--list-counter-style: upper-roman;
 }
-p ol[type="i"] {
+body ol[type="i"] {
 	--list-counter-style: lower-roman;
 }
-p ol[type="I" s] {
+body ol[type="I" s] {
 	--list-counter-style: upper-roman;
 }
-p ol[type="i" s] {
+body ol[type="i" s] {
 	--list-counter-style: lower-roman;
 }
-p ol[type="1"] {
+body ol[type="1"] {
 	--list-counter-style: decimal;
 }
-p ol > li {
+body ol > li {
 	position: relative;
 	padding-left: 1.75em;
 }
-p ol > li::before {
+body ol > li::before {
 	content: counter(list-item, var(--list-counter-style, decimal)) ".";
 	position: absolute;
 	font-weight: 400;
 	color: #6b7280;
 	left: 0;
 }
-p {
-	margin-top: 0.75rem;
-	margin-bottom: 0.75rem;
+body {
+	margin-left: auto;
+	margin-right: auto;
 }
-p ul > li {
+body ul > li {
 	position: relative;
 	padding-left: 1.75em;
 }
-p ul > li::before {
+body ul > li::before {
 	content: "";
 	position: absolute;
 	background-color: #d1d5db;
@@ -3476,13 +3476,13 @@ p ul > li::before {
 	top: calc(0.875em - 0.1875em);
 	left: 0.25em;
 }
-p hr {
+body hr {
 	border-color: #e5e7eb;
 	border-top-width: 1px;
 	margin-top: 3em;
 	margin-bottom: 3em;
 }
-p blockquote {
+body blockquote {
 	font-weight: 500;
 	font-style: italic;
 	color: #111827;
@@ -3493,13 +3493,13 @@ p blockquote {
 	margin-bottom: 1.6em;
 	padding-left: 1em;
 }
-p blockquote p:first-of-type::before {
+body blockquote p:first-of-type::before {
 	content: open-quote;
 }
-p blockquote p:last-of-type::after {
+body blockquote p:last-of-type::after {
 	content: close-quote;
 }
-p h1 {
+body h1 {
 	color: #111827;
 	font-weight: 800;
 	font-size: 2.25em;
@@ -3507,7 +3507,7 @@ p h1 {
 	margin-bottom: 0.8888889em;
 	line-height: 1.1111111;
 }
-p h2 {
+body h2 {
 	color: #111827;
 	font-weight: 700;
 	font-size: 1.5em;
@@ -3515,7 +3515,7 @@ p h2 {
 	margin-bottom: 1em;
 	line-height: 1.3333333;
 }
-p h3 {
+body h3 {
 	color: #111827;
 	font-weight: 600;
 	font-size: 1.25em;
@@ -3523,34 +3523,34 @@ p h3 {
 	margin-bottom: 0.6em;
 	line-height: 1.6;
 }
-p h4 {
+body h4 {
 	color: #111827;
 	font-weight: 600;
 	margin-top: 1.5em;
 	margin-bottom: 0.5em;
 	line-height: 1.5;
 }
-p figure figcaption {
+body figure figcaption {
 	color: #6b7280;
 	font-size: 0.875em;
 	line-height: 1.4285714;
 	margin-top: 0.8571429em;
 }
-p code {
+body code {
 	color: #111827;
 	font-weight: 600;
 	font-size: 0.875em;
 }
-p code::before {
+body code::before {
 	content: "`";
 }
-p code::after {
+body code::after {
 	content: "`";
 }
-p a code {
+body a code {
 	color: #111827;
 }
-p pre {
+body pre {
 	color: #e5e7eb;
 	background-color: #1f2937;
 	overflow-x: auto;
@@ -3564,7 +3564,7 @@ p pre {
 	padding-bottom: 0.8571429em;
 	padding-left: 1.1428571em;
 }
-p pre code {
+body pre code {
 	background-color: transparent;
 	border-width: 0;
 	border-radius: 0;
@@ -3575,13 +3575,13 @@ p pre code {
 	font-family: inherit;
 	line-height: inherit;
 }
-p pre code::before {
+body pre code::before {
 	content: none;
 }
-p pre code::after {
+body pre code::after {
 	content: none;
 }
-p table {
+body table {
 	width: 100%;
 	table-layout: auto;
 	text-align: left;
@@ -3590,91 +3590,91 @@ p table {
 	font-size: 0.875em;
 	line-height: 1.7142857;
 }
-p thead {
+body thead {
 	color: #111827;
 	font-weight: 600;
 	border-bottom-width: 1px;
 	border-bottom-color: #d1d5db;
 }
-p thead th {
+body thead th {
 	vertical-align: bottom;
 	padding-right: 0.5714286em;
 	padding-bottom: 0.5714286em;
 	padding-left: 0.5714286em;
 }
-p tbody tr {
+body tbody tr {
 	border-bottom-width: 1px;
 	border-bottom-color: #e5e7eb;
 }
-p tbody tr:last-child {
+body tbody tr:last-child {
 	border-bottom-width: 0;
 }
-p tbody td {
+body tbody td {
 	vertical-align: top;
 	padding-top: 0.5714286em;
 	padding-right: 0.5714286em;
 	padding-bottom: 0.5714286em;
 	padding-left: 0.5714286em;
 }
-p {
+body {
 	font-size: 1rem;
 	line-height: 1.75;
 }
-p p {
+body p {
 	margin-top: 1.25em;
 	margin-bottom: 1.25em;
 }
-p img {
+body img {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
-p video {
+body video {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
-p figure {
+body figure {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
-p figure > * {
+body figure > * {
 	margin-top: 0;
 	margin-bottom: 0;
 }
-p h2 code {
+body h2 code {
 	font-size: 0.875em;
 }
-p h3 code {
+body h3 code {
 	font-size: 0.9em;
 }
-p ol {
+body ol {
 	margin-top: 1.25em;
 	margin-bottom: 1.25em;
 }
-p ul {
+body ul {
 	margin-top: 1.25em;
 	margin-bottom: 1.25em;
 }
-p li {
+body li {
 	margin-top: 0.5em;
 	margin-bottom: 0.5em;
 }
-p > ul > li p {
+body > ul > li p {
 	margin-top: 0.75em;
 	margin-bottom: 0.75em;
 }
-p > ul > li > *:first-child {
+body > ul > li > *:first-child {
 	margin-top: 1.25em;
 }
-p > ul > li > *:last-child {
+body > ul > li > *:last-child {
 	margin-bottom: 1.25em;
 }
-p > ol > li > *:first-child {
+body > ol > li > *:first-child {
 	margin-top: 1.25em;
 }
-p > ol > li > *:last-child {
+body > ol > li > *:last-child {
 	margin-bottom: 1.25em;
 }
-p ul ul, p ul ol, p ol ul, p ol ol {
+body ul ul, body ul ol, body ol ul, body ol ol {
 	margin-top: 0.75em;
 	margin-bottom: 0.75em;
 	margin-top: 0.75em;
@@ -3684,131 +3684,131 @@ p ul ul, p ul ol, p ol ul, p ol ol {
 	margin-top: 0.75em;
 	margin-bottom: 0.75em;
 }
-p hr + * {
+body hr + * {
 	margin-top: 0;
 }
-p h2 + * {
+body h2 + * {
 	margin-top: 0;
 }
-p h3 + * {
+body h3 + * {
 	margin-top: 0;
 }
-p h4 + * {
+body h4 + * {
 	margin-top: 0;
 }
-p thead th:first-child {
+body thead th:first-child {
 	padding-left: 0;
 }
-p thead th:last-child {
+body thead th:last-child {
 	padding-right: 0;
 }
-p tbody td:first-child {
+body tbody td:first-child {
 	padding-left: 0;
 }
-p tbody td:last-child {
+body tbody td:last-child {
 	padding-right: 0;
 }
-p > :first-child {
+body > :first-child {
 	margin-top: 0;
 }
-p > :last-child {
+body > :last-child {
 	margin-bottom: 0;
 }
-p {
+body {
 	--tw-text-opacity: 1;
 	color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
 @media (min-width: 1024px) {
 
-	p {
+	body {
 		font-size: 1.125rem;
 		line-height: 1.7777778;
 	}
 
-	p p {
+	body p {
 		margin-top: 1.3333333em;
 		margin-bottom: 1.3333333em;
 	}
 
-	p [class~="lead"] {
+	body [class~="lead"] {
 		font-size: 1.2222222em;
 		line-height: 1.4545455;
 		margin-top: 1.0909091em;
 		margin-bottom: 1.0909091em;
 	}
 
-	p blockquote {
+	body blockquote {
 		margin-top: 1.6666667em;
 		margin-bottom: 1.6666667em;
 		padding-left: 1em;
 	}
 
-	p h1 {
+	body h1 {
 		font-size: 2.6666667em;
 		margin-top: 0;
 		margin-bottom: 0.8333333em;
 		line-height: 1;
 	}
 
-	p h2 {
+	body h2 {
 		font-size: 1.6666667em;
 		margin-top: 1.8666667em;
 		margin-bottom: 1.0666667em;
 		line-height: 1.3333333;
 	}
 
-	p h3 {
+	body h3 {
 		font-size: 1.3333333em;
 		margin-top: 1.6666667em;
 		margin-bottom: 0.6666667em;
 		line-height: 1.5;
 	}
 
-	p h4 {
+	body h4 {
 		margin-top: 1.7777778em;
 		margin-bottom: 0.4444444em;
 		line-height: 1.5555556;
 	}
 
-	p img {
+	body img {
 		margin-top: 1.7777778em;
 		margin-bottom: 1.7777778em;
 	}
 
-	p video {
+	body video {
 		margin-top: 1.7777778em;
 		margin-bottom: 1.7777778em;
 	}
 
-	p figure {
+	body figure {
 		margin-top: 1.7777778em;
 		margin-bottom: 1.7777778em;
 	}
 
-	p figure > * {
+	body figure > * {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
 
-	p figure figcaption {
+	body figure figcaption {
 		font-size: 0.8888889em;
 		line-height: 1.5;
 		margin-top: 1em;
 	}
 
-	p code {
+	body code {
 		font-size: 0.8888889em;
 	}
 
-	p h2 code {
+	body h2 code {
 		font-size: 0.8666667em;
 	}
 
-	p h3 code {
+	body h3 code {
 		font-size: 0.875em;
 	}
 
-	p pre {
+	body pre {
 		font-size: 0.8888889em;
 		line-height: 1.75;
 		margin-top: 2em;
@@ -3820,220 +3820,385 @@ p {
 		padding-left: 1.5em;
 	}
 
-	p ol {
+	body ol {
 		margin-top: 1.3333333em;
 		margin-bottom: 1.3333333em;
 	}
 
-	p ul {
+	body ul {
 		margin-top: 1.3333333em;
 		margin-bottom: 1.3333333em;
 	}
 
-	p li {
+	body li {
 		margin-top: 0.6666667em;
 		margin-bottom: 0.6666667em;
 	}
 
-	p ol > li {
+	body ol > li {
 		padding-left: 1.6666667em;
 	}
 
-	p ol > li::before {
+	body ol > li::before {
 		left: 0;
 	}
 
-	p ul > li {
+	body ul > li {
 		padding-left: 1.6666667em;
 	}
 
-	p ul > li::before {
+	body ul > li::before {
 		width: 0.3333333em;
 		height: 0.3333333em;
 		top: calc(0.8888889em - 0.1666667em);
 		left: 0.2222222em;
 	}
 
-	p > ul > li p {
+	body > ul > li p {
 		margin-top: 0.8888889em;
 		margin-bottom: 0.8888889em;
 	}
 
-	p > ul > li > *:first-child {
+	body > ul > li > *:first-child {
 		margin-top: 1.3333333em;
 	}
 
-	p > ul > li > *:last-child {
+	body > ul > li > *:last-child {
 		margin-bottom: 1.3333333em;
 	}
 
-	p > ol > li > *:first-child {
+	body > ol > li > *:first-child {
 		margin-top: 1.3333333em;
 	}
 
-	p > ol > li > *:last-child {
+	body > ol > li > *:last-child {
 		margin-bottom: 1.3333333em;
 	}
 
-	p ul ul, p ul ol, p ol ul, p ol ol {
+	body ul ul, body ul ol, body ol ul, body ol ol {
 		margin-top: 0.8888889em;
 		margin-bottom: 0.8888889em;
 	}
 
-	p ul ul, p ul ol, p ol ul, p ol ol {
+	body ul ul, body ul ol, body ol ul, body ol ol {
 		margin-top: 0.8888889em;
 		margin-bottom: 0.8888889em;
 	}
 
-	p ul ul, p ul ol, p ol ul, p ol ol {
+	body ul ul, body ul ol, body ol ul, body ol ol {
 		margin-top: 0.8888889em;
 		margin-bottom: 0.8888889em;
 	}
 
-	p ul ul, p ul ol, p ol ul, p ol ol {
+	body ul ul, body ul ol, body ol ul, body ol ol {
 		margin-top: 0.8888889em;
 		margin-bottom: 0.8888889em;
 	}
 
-	p hr {
+	body hr {
 		margin-top: 3.1111111em;
 		margin-bottom: 3.1111111em;
 	}
 
-	p hr + * {
+	body hr + * {
 		margin-top: 0;
 	}
 
-	p h2 + * {
+	body h2 + * {
 		margin-top: 0;
 	}
 
-	p h3 + * {
+	body h3 + * {
 		margin-top: 0;
 	}
 
-	p h4 + * {
+	body h4 + * {
 		margin-top: 0;
 	}
 
-	p table {
+	body table {
 		font-size: 0.8888889em;
 		line-height: 1.5;
 	}
 
-	p thead th {
+	body thead th {
 		padding-right: 0.75em;
 		padding-bottom: 0.75em;
 		padding-left: 0.75em;
 	}
 
-	p thead th:first-child {
+	body thead th:first-child {
 		padding-left: 0;
 	}
 
-	p thead th:last-child {
+	body thead th:last-child {
 		padding-right: 0;
 	}
 
-	p tbody td {
+	body tbody td {
 		padding-top: 0.75em;
 		padding-right: 0.75em;
 		padding-bottom: 0.75em;
 		padding-left: 0.75em;
 	}
 
-	p tbody td:first-child {
+	body tbody td:first-child {
 		padding-left: 0;
 	}
 
-	p tbody td:last-child {
+	body tbody td:last-child {
 		padding-right: 0;
 	}
 
-	p > :first-child {
+	body > :first-child {
 		margin-top: 0;
 	}
 
-	p > :last-child {
+	body > :last-child {
 		margin-bottom: 0;
 	}
 }
-.wp-block p {
-	max-width: 72rem;
-}
-.has-drop-cap:not(:focus):first-letter {
-	float: left;
-	margin: 0px;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	padding-top: 0.5rem;
-	font-size: 3.75rem;
-	line-height: 1;
-	font-weight: 700;
-	text-transform: uppercase;
-	line-height: 2.5rem;
-}
-@media (min-width: 768px) {
+@media (min-width: 1280px) {
 
-	.has-drop-cap:not(:focus):first-letter {
-		padding-top: 0.75rem;
+	body {
+		font-size: 1.25rem;
+		line-height: 1.8;
 	}
 
-	.has-drop-cap:not(:focus):first-letter {
-		font-size: 6rem;
+	body p {
+		margin-top: 1.2em;
+		margin-bottom: 1.2em;
+	}
+
+	body [class~="lead"] {
+		font-size: 1.2em;
+		line-height: 1.5;
+		margin-top: 1em;
+		margin-bottom: 1em;
+	}
+
+	body blockquote {
+		margin-top: 1.6em;
+		margin-bottom: 1.6em;
+		padding-left: 1.0666667em;
+	}
+
+	body h1 {
+		font-size: 2.8em;
+		margin-top: 0;
+		margin-bottom: 0.8571429em;
 		line-height: 1;
 	}
-}
-p {
-	max-width: 56rem;
-}
-h1 {
-	margin-bottom: 0.5rem;
-	font-size: 3rem;
-	line-height: 1;
-}
-@media (min-width: 768px) {
 
-	h1 {
-		margin-bottom: 1rem;
+	body h2 {
+		font-size: 1.8em;
+		margin-top: 1.5555556em;
+		margin-bottom: 0.8888889em;
+		line-height: 1.1111111;
+	}
+
+	body h3 {
+		font-size: 1.5em;
+		margin-top: 1.6em;
+		margin-bottom: 0.6666667em;
+		line-height: 1.3333333;
+	}
+
+	body h4 {
+		margin-top: 1.8em;
+		margin-bottom: 0.6em;
+		line-height: 1.6;
+	}
+
+	body img {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	body video {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	body figure {
+		margin-top: 2em;
+		margin-bottom: 2em;
+	}
+
+	body figure > * {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+
+	body figure figcaption {
+		font-size: 0.9em;
+		line-height: 1.5555556;
+		margin-top: 1em;
+	}
+
+	body code {
+		font-size: 0.9em;
+	}
+
+	body h2 code {
+		font-size: 0.8611111em;
+	}
+
+	body h3 code {
+		font-size: 0.9em;
+	}
+
+	body pre {
+		font-size: 0.9em;
+		line-height: 1.7777778;
+		margin-top: 2em;
+		margin-bottom: 2em;
+		border-radius: 0.5rem;
+		padding-top: 1.1111111em;
+		padding-right: 1.3333333em;
+		padding-bottom: 1.1111111em;
+		padding-left: 1.3333333em;
+	}
+
+	body ol {
+		margin-top: 1.2em;
+		margin-bottom: 1.2em;
+	}
+
+	body ul {
+		margin-top: 1.2em;
+		margin-bottom: 1.2em;
+	}
+
+	body li {
+		margin-top: 0.6em;
+		margin-bottom: 0.6em;
+	}
+
+	body ol > li {
+		padding-left: 1.8em;
+	}
+
+	body ol > li::before {
+		left: 0;
+	}
+
+	body ul > li {
+		padding-left: 1.8em;
+	}
+
+	body ul > li::before {
+		width: 0.35em;
+		height: 0.35em;
+		top: calc(0.9em - 0.175em);
+		left: 0.25em;
+	}
+
+	body > ul > li p {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+
+	body > ul > li > *:first-child {
+		margin-top: 1.2em;
+	}
+
+	body > ul > li > *:last-child {
+		margin-bottom: 1.2em;
+	}
+
+	body > ol > li > *:first-child {
+		margin-top: 1.2em;
+	}
+
+	body > ol > li > *:last-child {
+		margin-bottom: 1.2em;
+	}
+
+	body ul ul, body ul ol, body ol ul, body ol ol {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+
+	body ul ul, body ul ol, body ol ul, body ol ol {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+
+	body ul ul, body ul ol, body ol ul, body ol ol {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+
+	body ul ul, body ul ol, body ol ul, body ol ol {
+		margin-top: 0.8em;
+		margin-bottom: 0.8em;
+	}
+
+	body hr {
+		margin-top: 2.8em;
+		margin-bottom: 2.8em;
+	}
+
+	body hr + * {
+		margin-top: 0;
+	}
+
+	body h2 + * {
+		margin-top: 0;
+	}
+
+	body h3 + * {
+		margin-top: 0;
+	}
+
+	body h4 + * {
+		margin-top: 0;
+	}
+
+	body table {
+		font-size: 0.9em;
+		line-height: 1.5555556;
+	}
+
+	body thead th {
+		padding-right: 0.6666667em;
+		padding-bottom: 0.8888889em;
+		padding-left: 0.6666667em;
+	}
+
+	body thead th:first-child {
+		padding-left: 0;
+	}
+
+	body thead th:last-child {
+		padding-right: 0;
+	}
+
+	body tbody td {
+		padding-top: 0.8888889em;
+		padding-right: 0.6666667em;
+		padding-bottom: 0.8888889em;
+		padding-left: 0.6666667em;
+	}
+
+	body tbody td:first-child {
+		padding-left: 0;
+	}
+
+	body tbody td:last-child {
+		padding-right: 0;
+	}
+
+	body > :first-child {
+		margin-top: 0;
+	}
+
+	body > :last-child {
+		margin-bottom: 0;
 	}
 }
-h2 {
-	margin-bottom: 0.25rem;
-	font-size: 2.25rem;
-	line-height: 2.5rem;
-}
-@media (min-width: 768px) {
-
-	h2 {
-		margin-bottom: 0.5rem;
-	}
-}
-h3 {
-	margin-bottom: 0.5rem;
-	font-size: 1.875rem;
-	line-height: 2.25rem;
-}
-h4 {
-	margin-bottom: 0.5rem;
-	font-size: 1.5rem;
-	line-height: 2rem;
-}
-h5 {
-	margin-bottom: 0.5rem;
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-}
-h6 {
-	font-size: 1.25rem;
-	line-height: 1.75rem;
-}
-h1, h2, h3, h4, h5, h6 {
-	max-width: 56rem;
-}
-.wp-block, .editor-post-title__input {
-	max-width: 56rem;
-}
+/** BLOCK */
 .first\:pt-0:first-child {
 	padding-top: 0px;
 }

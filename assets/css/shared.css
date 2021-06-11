@@ -1,9 +1,23 @@
 body {
-  @apply bg-gray-50;
+  @apply bg-gray-100;
 }
 
 .content-wrapper {
   @apply min-h-screen pt-24 lg:pt-0;
+}
+
+/** article page content */
+.article-content {
+  @apply prose lg:prose-lg xl:prose-xl text-gray-600 mx-auto max-w-6xl;
+}
+
+/** only for home **/
+.home .article-h1 {
+  @apply hidden;
+}
+
+.home .article-content {
+  @apply max-w-full;
 }
 
 /** btn */
