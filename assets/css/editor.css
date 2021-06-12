@@ -1,16 +1,14 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "./settings/fonts.css";
-@import "tailwindcss/utilities";
-
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './settings/fonts.css';
+@import 'tailwindcss/utilities';
 
 /** shared */
-@import "./has.css";
-
-body {
-  @apply prose lg:prose-lg mx-auto max-w-6xl;
-}
-
+@import './has.css';
 
 /** BLOCK */
-@import "blocks/blocks-editor.css";
+@import 'blocks/blocks-editor.css';
+
+body {
+  @apply max-w-6xl mx-auto prose lg:prose-lg;
+}

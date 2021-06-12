@@ -3,11 +3,11 @@
 }
 
 .gm-hero-container {
-  @apply relative max-w-full w-full overflow-hidden;
+  @apply relative w-full max-w-full overflow-hidden;
 }
 
 .gm-hero-autoplay {
-  @apply inline-flex absolute right-4 md:right-8 ml-4 focus:outline-none;
+  @apply absolute inline-flex ml-4 right-4 md:right-8 focus:outline-none;
 }
 
 .gm-hero-autoplay span {
@@ -15,7 +15,7 @@
 }
 
 .gm-hero-autoplay::after {
-  @apply flex items-center justify-center bg-contain bg-center bg-no-repeat w-14 h-14 bg-play;
+  @apply flex items-center justify-center bg-center bg-no-repeat bg-contain w-14 h-14 bg-play;
   content: '';
 }
 
@@ -24,33 +24,33 @@
 }
 
 .gm-hero {
-  @apply w-full max-w-full relative;
+  @apply relative w-full max-w-full;
 }
 
 .gm-hero > div {
-  @apply max-h-screen flex items-start;
+  @apply flex items-start max-h-screen;
 }
 
 .gm-hero > div > div {
-  @apply max-w-full relative;
+  @apply relative max-w-full;
 }
 
 /** mask over picture */
 .gm-hero > div > div::after {
-  @apply absolute top-0 left-0 bottom-0 right-0 max-w-full w-full opacity-40 bg-gradient-to-b from-gray-800 to-transparent;
+  @apply absolute top-0 bottom-0 left-0 right-0 w-full max-w-full opacity-40 bg-gradient-to-b from-gray-800 to-transparent;
   content: '';
 }
 
 .gm-home-cell {
-  @apply relative flex justify-center items-center overflow-hidden;
+  @apply relative flex items-center justify-center overflow-hidden;
 }
 
 .gm-hero-dot-container {
-  @apply flex items-center justify-center px-4 mt-8 absolute bottom-5 w-full max-w-full z-10;
+  @apply absolute z-10 flex items-center justify-center w-full max-w-full px-4 mt-8 bottom-5;
 }
 
 .gm-hero-dot {
-  @apply w-3 h-3 md:w-4 md:h-4 border border-white rounded-full m-1 cursor-pointer whitespace-nowrap transition focus:outline-none;
+  @apply w-3 h-3 m-1 transition border border-white rounded-full cursor-pointer md:w-4 md:h-4 whitespace-nowrap focus:outline-none;
 }
 
 .gm-hero-dot span {
@@ -58,7 +58,7 @@
 }
 
 .gm-hero-dot-current {
-  @apply bg-white w-4 h-4 md:w-5 md:h-5;
+  @apply w-4 h-4 bg-white md:w-5 md:h-5;
 }
 
 .gm-hero-arrow-container {
@@ -66,11 +66,11 @@
 }
 
 .gm-hero-arrow-container button {
-  @apply relative flex items-center justify-center font-medium text-center rounded-full w-12 h-12 bg-white opacity-70 z-10 focus:outline-none;
+  @apply relative z-10 flex items-center justify-center w-12 h-12 font-medium text-center bg-white rounded-full opacity-70 focus:outline-none;
 }
 
 .gm-hero-arrow-container button:hover {
-  @apply opacity-100 shadow-lg;
+  @apply shadow-lg opacity-100;
 }
 
 .gm-hero-arrow-container button span {
@@ -78,13 +78,13 @@
 }
 
 .gm-hero-arrow-previous::after {
-  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative bg-previous;
-  content: "";
+  @apply relative flex items-center justify-center w-5 h-6 bg-no-repeat bg-contain bg-previous;
+  content: '';
 }
 
 .gm-hero-arrow-next::after {
-  @apply flex items-center justify-center w-5 h-6 bg-contain bg-no-repeat relative left-1 bg-next;
-  content: "";
+  @apply relative flex items-center justify-center w-5 h-6 bg-no-repeat bg-contain left-1 bg-next;
+  content: '';
 }
 
 .gm-hero-arrow-container button.gm-arrow-disabled {
@@ -92,7 +92,7 @@
 }
 
 .gm-hero-arrow-container button.gm-arrow-disabled:hover {
-  @apply opacity-20 shadow-none;
+  @apply shadow-none opacity-20;
 }
 
 .gm-hero-arrow-container button.gm-arrow-disabled::after {
@@ -106,11 +106,11 @@
 }
 
 .hero_content h2 {
-  @apply font-bold text-white text-3xl md:text-7xl mx-0 mb-3;
+  @apply mx-0 mb-3 text-3xl font-bold text-white md:text-7xl;
 }
 
 .hero_content p {
-  @apply text-white mx-0;
+  @apply mx-0 text-white;
 }
 
 /** button */

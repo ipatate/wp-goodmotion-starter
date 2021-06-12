@@ -1,9 +1,9 @@
 .gm-header {
-  @apply flex bg-accent shadow-lg max-w-full px-2 py-6 xl:px-8 xl:py-6 fixed z-20 left-0 right-0 transform transition duration-500 translate-y-0 lg:-translate-y-full;
+  @apply fixed left-0 right-0 z-20 flex max-w-full px-2 py-6 transition duration-500 transform translate-y-0 shadow-lg bg-accent xl:px-8 xl:py-6 lg:-translate-y-full;
 }
 
 .gm-header .wrapper {
-  @apply flex w-full items-stretch;
+  @apply flex items-stretch w-full;
 }
 
 .gm-header .gm-logo {

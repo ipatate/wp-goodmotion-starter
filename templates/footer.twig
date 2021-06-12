@@ -1,11 +1,10 @@
 <footer id="footer" class="gm-footer">
   <div class="gm-logo">
-    <a href="{{ home_url }}" title="{{ rel }}"
-    ><span>{{ site.name }}</span></a
-    >
+    <a href="{{ home_url }}" title="{{ rel }}">
+      <span>{{ site.name }}</span>
+    </a>
     <p>
-      {{ site.name }} {{ "now"|date("Y") }} <br />
-      {{ __("All rights reserved.") }}
+      {{ site.name }} {{ "now"|date("Y") }} - {{ __('All rights reserved.') }}
     </p>
   </div>
   <div class="gm-footer-nav">
@@ -16,22 +15,22 @@
   <div class="gm-footer-social">
     <div>{{ __('follow us', 'goodmotion-theme') }}</div>
     <div>
-    <a
-      target="_blank"
-      class="gm-icon gm-facebook-icon"
-      href="{{ options.facebook_page }}"
-      title="{{ __('follow us on facebook', 'goodmotion-theme') }}"
-    >
-      <span>{{ options.facebook_page }}</span>
-    </a>
-    <a
-      target="_blank"
-      class="gm-icon gm-instagram-icon"
-      href="{{ options.instagram_page }}"
-      title="{{ __('follow us on instagram', 'goodmotion-theme') }}"
-    >
-      <span>{{ options.instagram_page }}</span>
-    </a>
+      <a
+        target="_blank"
+        class="gm-icon gm-facebook-icon"
+        href="{{ options.facebook_page }}"
+        title="{{ __('follow us on facebook', 'goodmotion-theme') }}"
+      >
+        <span>{{ options.facebook_page }}</span>
+      </a>
+      <a
+        target="_blank"
+        class="gm-icon gm-instagram-icon"
+        href="{{ options.instagram_page }}"
+        title="{{ __('follow us on instagram', 'goodmotion-theme') }}"
+      >
+        <span>{{ options.instagram_page }}</span>
+      </a>
     </div>
   </div>
 </footer>

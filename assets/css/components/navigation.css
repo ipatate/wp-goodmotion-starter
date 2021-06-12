@@ -6,10 +6,10 @@
 }
 
 .gm-burger {
-  @apply z-30 flex items-center cursor-pointer relative w-10 h-10 bg-transparent transform;
+  @apply relative z-30 flex items-center w-10 h-10 transform bg-transparent cursor-pointer;
 }
 .gm-burger span {
-  @apply block absolute left-0 w-full h-2 bg-white transform transition;
+  @apply absolute left-0 block w-full h-2 transition transform bg-white;
 }
 
 .gm-burger span:nth-child(1) {
@@ -54,15 +54,15 @@
 
 /** first level */
 .gm-nav-main > ul {
-  @apply flex flex-col lg:flex-row lg:justify-start items-stretch w-full;
+  @apply flex flex-col items-stretch w-full lg:flex-row lg:justify-start;
 }
 
 .gm-nav-main > ul.nav-has-lot {
-  @apply lg:justify-between
+  @apply lg:justify-between;
 }
 
 .gm-nav-main > ul > li {
-  @apply relative my-0 mx-5 flex items-start flex-col lg:flex-row lg:border-b border-gray-200 lg:items-center lg:border-none;
+  @apply relative flex flex-col items-start mx-5 my-0 border-gray-200 lg:flex-row lg:border-b lg:items-center lg:border-none;
 }
 
 .gm-nav-main > ul.nav-has-lot > li {
@@ -82,7 +82,7 @@
 
 /** link */
 .gm-nav-main a {
-  @apply block text-2xl w-full text-accent py-4 lg:py-2 px-4 whitespace-nowrap lg:focus:underline;
+  @apply block w-full px-4 py-4 text-2xl text-accent lg:py-2 whitespace-nowrap lg:focus:underline;
   @apply lg:text-base lg:text-white lg:w-auto;
 }
 
@@ -105,12 +105,12 @@
 
 /** arrow down when it has children's */
 .gm-nav-main ul > li.menu-item-has-children > a::after {
-  @apply flex items-center w-4 h-2 ml-3 bg-down-nav bg-no-repeat hidden lg:flex;
+  @apply flex items-center hidden w-4 h-2 ml-3 bg-no-repeat bg-down-nav lg:flex;
   content: '';
 }
 
 .gm-nav-main ul > li.menu-item-has-children::after {
-  @apply absolute right-0 flex items-center w-10 h-10 mt-3 bg-down-nav-mobile bg-no-repeat transition lg:hidden transform;
+  @apply absolute right-0 flex items-center w-10 h-10 mt-3 transition transform bg-no-repeat bg-down-nav-mobile lg:hidden;
   content: '';
 }
 
@@ -122,11 +122,11 @@
 
 /** nav is open */
 .gm-nav-main-open {
-  @apply flex opacity-100 overflow-visible h-screen max-h-screen overflow-y-auto pt-24;
+  @apply flex h-screen max-h-screen pt-24 overflow-visible overflow-y-auto opacity-100;
 }
 
 .gm-nav-main-open ul > li.is-opened > ul {
-  @apply flex relative w-screen max-w-full top-0 max-h-full opacity-100 shadow-inner
+  @apply relative top-0 flex w-screen max-w-full max-h-full shadow-inner opacity-100;
 }
 
 /** open second level nav on mobile nav */
@@ -135,11 +135,11 @@
 }
 
 .gm-nav-main-open ul > li > ul > li {
-  @apply flex w-full m-0 pl-4 lg:p-0 bg-gray-50 border-t border-gray-200 lg:border-none;
+  @apply flex w-full pl-4 m-0 border-t border-gray-200 lg:p-0 bg-gray-50 lg:border-none;
 }
 
 .gm-nav-main-open ul > li > ul > li a {
-    @apply w-full text-left md:text-center;
+  @apply w-full text-left md:text-center;
 }
 
 /** page on top */

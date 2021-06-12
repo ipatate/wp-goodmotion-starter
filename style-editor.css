@@ -1672,8 +1672,9 @@ video {
   font-weight: 300;
   font-display: swap;
   src: local(''),
-  url('/assets/fonts/roboto-v27-latin-300.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-  url('/assets/fonts/roboto-v27-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/assets/fonts/roboto-v27-latin-300.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/assets/fonts/roboto-v27-latin-300.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-regular - latin */
 @font-face {
@@ -1682,8 +1683,9 @@ video {
   font-weight: 400;
   font-display: swap;
   src: local(''),
-  url('/assets/fonts/roboto-v27-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-  url('/assets/fonts/roboto-v27-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/assets/fonts/roboto-v27-latin-regular.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/assets/fonts/roboto-v27-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-italic - latin */
 @font-face {
@@ -1692,8 +1694,9 @@ video {
   font-weight: 400;
   font-display: swap;
   src: local(''),
-  url('/assets/fonts/roboto-v27-latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-  url('/assets/fonts/roboto-v27-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/assets/fonts/roboto-v27-latin-italic.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/assets/fonts/roboto-v27-latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 /* roboto-700 - latin */
 @font-face {
@@ -1702,8 +1705,9 @@ video {
   font-weight: 700;
   font-display: swap;
   src: local(''),
-  url('/assets/fonts/roboto-v27-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-  url('/assets/fonts/roboto-v27-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url('/assets/fonts/roboto-v27-latin-700.woff2') format('woff2'),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url('/assets/fonts/roboto-v27-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
 .sr-only {
 	position: absolute;
@@ -3408,6 +3412,48 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(69, 11, 64, var(--tw-text-opacity));
 }
+/** BLOCK */
+h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 72rem;
+}
+.wp-block-quote {
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-block-pullquote {
+	margin-left: auto;
+	margin-right: auto;
+	border-style: none;
+}
+.wp-block-table {
+	margin-left: auto;
+	margin-right: auto;
+}
+.has-drop-cap:not(:focus):first-letter {
+	float: left;
+	margin: 0px;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	padding-top: 0.5rem;
+	font-size: 3.75rem;
+	line-height: 1;
+	font-weight: 700;
+	text-transform: uppercase;
+	line-height: 2.5rem;
+}
+@media (min-width: 768px) {
+
+	.has-drop-cap:not(:focus):first-letter {
+		padding-top: 0.75rem;
+	}
+
+	.has-drop-cap:not(:focus):first-letter {
+		font-size: 6rem;
+		line-height: 1;
+	}
+}
 body {
 	color: #1f2937;
 	max-width: 65ch;
@@ -3459,16 +3505,16 @@ body ol > li {
 	position: relative;
 	padding-left: 1.75em;
 }
+body {
+	margin-left: auto;
+	margin-right: auto;
+}
 body ol > li::before {
 	content: counter(list-item, var(--list-counter-style, decimal)) ".";
 	position: absolute;
 	font-weight: 400;
 	color: #6b7280;
 	left: 0;
-}
-body {
-	margin-left: auto;
-	margin-right: auto;
 }
 body ul > li {
 	position: relative;
@@ -3636,12 +3682,12 @@ body img {
 	margin-top: 2em;
 	margin-bottom: 2em;
 }
+body {
+	max-width: 72rem;
+}
 body video {
 	margin-top: 2em;
 	margin-bottom: 2em;
-}
-body {
-	max-width: 72rem;
 }
 body figure {
 	margin-top: 2em;
@@ -3965,7 +4011,6 @@ body > :last-child {
 		margin-bottom: 0;
 	}
 }
-/** BLOCK */
 .first\:pt-0:first-child {
 	padding-top: 0px;
 }

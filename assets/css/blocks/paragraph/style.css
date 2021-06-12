@@ -1,3 +1,3 @@
 .has-drop-cap:not(:focus):first-letter {
-  @apply float-left text-6xl md:text-8xl uppercase font-bold leading-10 pt-2 md:pt-3 px-2 m-0;
+  @apply float-left px-2 pt-2 m-0 text-6xl font-bold leading-10 uppercase md:text-8xl md:pt-3;
 }

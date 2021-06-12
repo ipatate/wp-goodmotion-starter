@@ -1,6 +1,6 @@
 :root {
-  --branding--color: #450B40;
+  --branding--color: #450b40;
 
   /** header **/
-  --header-bg-color: var(--branding--color)
+  --header-bg-color: var(--branding--color);
 }

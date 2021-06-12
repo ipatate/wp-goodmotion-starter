@@ -1,18 +1,18 @@
 .gm-footer {
-  @apply bg-accent px-2 lg:px-12 py-8 lg:py-24 w-full flex flex-col-reverse md:flex-row items-stretch text-white min-h-[300px];
+  @apply bg-accent px-2 lg:px-12 py-8 lg:py-20 w-full flex flex-col-reverse md:flex-row items-stretch text-white min-h-[300px];
 }
 
 .gm-footer > div {
-  @apply flex-1 my-6
+  @apply flex-1 my-3;
 }
 
 /** bloc logo */
 .gm-footer .gm-logo {
-@apply flex flex-row md:flex-col
+  @apply flex flex-row md:flex-col;
 }
 
 .gm-footer .gm-logo p {
-  @apply text-sm text-white;
+  @apply mx-0 my-2 text-sm text-white;
 }
 
 .gm-footer .gm-logo a {
@@ -29,12 +29,12 @@
 }
 
 .gm-footer .gm-footer-nav a {
-  @apply underline
+  @apply underline;
 }
 
 /** bloc social */
 .gm-footer-social {
-  @apply flex flex-col items-center
+  @apply flex flex-col items-center;
 }
 .gm-footer-social > div:first-child {
   @apply text-2xl font-bold capitalize;
