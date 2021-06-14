@@ -9,6 +9,45 @@
 /** BLOCK */
 @import 'blocks/blocks-editor.css';
 
+/** prose to editor */
 body {
-  @apply max-w-6xl mx-auto prose lg:prose-lg;
+  @apply w-full p-0 mx-auto prose lg:prose-lg;
+}
+
+/** full width editor block */
+.editor-post-title,
+.block-editor-block-list__layout {
+  @apply lg:max-w-full lg:px-4 lg:mx-auto;
+}
+
+.editor-post-title__block {
+  @apply w-full h-full px-6 py-10 m-0;
+}
+
+.editor-post-title__block > div {
+  @apply lg:m-0;
+}
+
+.editor-post-title__input {
+  @apply p-0 my-0 font-sans opacity-100;
+}
+
+.wp-block {
+  @apply font-sans max-w-7xl;
+}
+
+.wp-block[data-align='full'] {
+  @apply max-w-none;
+}
+
+.wp-block[data-align='wide'] {
+  @apply max-w-full;
+}
+
+.wp-block[data-align='full'] figure.wp-block-image {
+  @apply max-w-full mx-auto;
+}
+
+.wp-block[data-align='wide'] figure.wp-block-image {
+  @apply max-w-full mx-auto;
 }

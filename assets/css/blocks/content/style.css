@@ -13,6 +13,14 @@ figure {
   @apply max-w-6xl mx-auto;
 }
 
+.wp-block-image {
+  @apply mx-auto;
+}
+
+.wp-block-image.alignfull img {
+  @apply mx-auto;
+}
+
 .wp-block-quote {
   @apply mx-auto;
 }

@@ -1,0 +1,3 @@
+.wp-block-image.alignfull {
+  @apply max-w-full;
+}

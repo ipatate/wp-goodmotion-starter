@@ -3418,6 +3418,14 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 	margin-right: auto;
 	max-width: 72rem;
 }
+.wp-block-image {
+	margin-left: auto;
+	margin-right: auto;
+}
+.wp-block-image.alignfull img {
+	margin-left: auto;
+	margin-right: auto;
+}
 .wp-block-quote {
 	margin-left: auto;
 	margin-right: auto;
@@ -3453,6 +3461,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 		font-size: 6rem;
 		line-height: 1;
 	}
+}
+.wp-block-image.alignfull {
+	max-width: 100%;
 }
 body {
 	color: #1f2937;
@@ -3673,6 +3684,7 @@ body tbody td {
 body {
 	font-size: 1rem;
 	line-height: 1.75;
+	width: 100%;
 }
 body p {
 	margin-top: 1.25em;
@@ -3681,9 +3693,6 @@ body p {
 body img {
 	margin-top: 2em;
 	margin-bottom: 2em;
-}
-body {
-	max-width: 72rem;
 }
 body video {
 	margin-top: 2em;
@@ -3770,6 +3779,9 @@ body > :first-child {
 }
 body > :last-child {
 	margin-bottom: 0;
+}
+body {
+	padding: 0px;
 }
 @media (min-width: 1024px) {
 
@@ -4010,6 +4022,71 @@ body > :last-child {
 	body > :last-child {
 		margin-bottom: 0;
 	}
+}
+/*code editor
+.edit-post-text-editor__body {
+  max-width: none !important;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+*/
+@media (min-width: 1024px) {
+
+	.editor-post-title, .block-editor-block-list__layout {
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.editor-post-title, .block-editor-block-list__layout {
+		max-width: 100%;
+	}
+
+	.editor-post-title, .block-editor-block-list__layout {
+		padding-left: 1rem;
+		padding-right: 1rem;
+	}
+}
+.editor-post-title__block {
+	margin: 0px;
+	height: 100%;
+	width: 100%;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+@media (min-width: 1024px) {
+
+	.editor-post-title__block > div {
+		margin: 0px;
+	}
+}
+.editor-post-title__input {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0px;
+	font-family: Roboto, helvetica, arial, sans-serif;
+	opacity: 1;
+}
+.wp-block {
+	max-width: 80rem;
+	font-family: Roboto, helvetica, arial, sans-serif;
+}
+.wp-block[data-align='full'] {
+	max-width: none;
+}
+.wp-block[data-align='wide'] {
+	max-width: 100%;
+}
+.wp-block[data-align='full'] figure.wp-block-image {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+.wp-block[data-align='wide'] figure.wp-block-image {
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
 }
 .first\:pt-0:first-child {
 	padding-top: 0px;
