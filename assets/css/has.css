@@ -6,3 +6,21 @@
 .has-text-color.has-accent-color {
   @apply text-accent;
 }
+.has-white-color {
+  @apply text-white;
+}
+.has-white-background-color {
+  @apply bg-white;
+}
+.has-accent-color {
+  @apply text-accent;
+}
+.has-accent-background-color {
+  @apply bg-accent;
+}
+.has-gray-background-color {
+  @apply bg-gray-100;
+}
+.has-gray-color {
+  @apply text-gray-100;
+}

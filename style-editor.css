@@ -3412,6 +3412,30 @@ video {
 	--tw-text-opacity: 1;
 	color: rgba(69, 11, 64, var(--tw-text-opacity));
 }
+.has-white-color {
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.has-white-background-color {
+	--tw-bg-opacity: 1;
+	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
+}
+.has-accent-color {
+	--tw-text-opacity: 1;
+	color: rgba(69, 11, 64, var(--tw-text-opacity));
+}
+.has-accent-background-color {
+	--tw-bg-opacity: 1;
+	background-color: rgba(69, 11, 64, var(--tw-bg-opacity));
+}
+.has-gray-background-color {
+	--tw-bg-opacity: 1;
+	background-color: rgba(243, 244, 246, var(--tw-bg-opacity));
+}
+.has-gray-color {
+	--tw-text-opacity: 1;
+	color: rgba(243, 244, 246, var(--tw-text-opacity));
+}
 /** BLOCK */
 h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 	margin-left: auto;
@@ -3465,6 +3489,103 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 .wp-block-image.alignfull {
 	max-width: 100%;
 }
+.wp-block-goodmotion-gm-wrapper-line {
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+}
+@media (min-width: 768px) {
+
+	.wp-block-goodmotion-gm-wrapper-line {
+		flex-direction: row;
+	}
+}
+.wp-block-goodmotion-gm-wrapper-line {
+	min-height: 200px;
+	border-width: 1px;
+	--tw-border-opacity: 1;
+	border-color: rgba(229, 231, 235, var(--tw-border-opacity));
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks .block-editor-block-list__layout {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks .block-editor-block-list__layout .block-list-appender {
+	z-index: 100;
+}
+.wp-block-goodmotion-gm-block-img-txt {
+	position: relative;
+	display: flex;
+	height: 24rem;
+	min-height: 400px;
+	flex: 1 1 0%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-repeat: no-repeat;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content::after {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	--tw-bg-opacity: 1;
+	background-color: rgba(31, 41, 55, var(--tw-bg-opacity));
+	opacity: 0.3;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-duration: 150ms;
+  content: '';
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content:hover::after {
+	opacity: 0.2;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content span {
+	position: relative;
+	z-index: 10;
+	font-size: 1.5rem;
+	line-height: 2rem;
+	font-weight: 700;
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content {
+	z-index: 10;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-block-edit-image-container {
+	z-index: 50;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content .block-editor-rich-text__editable {
+	z-index: 50;
+	margin-right: 1rem;
+	font-weight: 700;
+	--tw-text-opacity: 1;
+	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content .block-editor-url-input__button {
+	z-index: 50;
+}
+/** prose to editor */
 body {
 	color: #1f2937;
 	max-width: 65ch;
@@ -4023,13 +4144,7 @@ body {
 		margin-bottom: 0;
 	}
 }
-/*code editor
-.edit-post-text-editor__body {
-  max-width: none !important;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-*/
+/** full width editor block */
 @media (min-width: 1024px) {
 
 	.editor-post-title, .block-editor-block-list__layout {

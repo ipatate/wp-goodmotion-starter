@@ -1,0 +1,3 @@
+.wp-block-goodmotion-gm-wrapper-line {
+  @apply flex w-full flex-col md:flex-row;
+}

@@ -1,0 +1,12 @@
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content {
+  @apply z-10
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-block-edit-image-container {
+  @apply z-50
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content .block-editor-rich-text__editable {
+  @apply text-white mr-4 font-bold z-50;
+}
+.wp-block-goodmotion-gm-block-img-txt .gm-img-text-content .block-editor-url-input__button {
+  @apply z-50;
+}

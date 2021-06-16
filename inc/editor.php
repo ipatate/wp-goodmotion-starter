@@ -32,6 +32,8 @@ function gutenberg_settings()
     'editor-color-palette',
     array(
       array('name' => 'accent', 'slug'  => 'accent', 'color' => '#450B40'),
+      array('name' => 'white', 'slug'  => 'white', 'color' => '#FFFFFF'),
+      array('name' => 'gray', 'slug'  => 'gray', 'color' => '#E5E7EB'),
     )
   );
 
@@ -99,8 +101,21 @@ function editor_enqueue()
   wp_enqueue_script('custom-editor-script', get_template_directory_uri() . '/editor/js/reset.js', array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'), '1.0', true);
 }
 
+function block_category( $categories ) {
+  array_splice($categories, 2, 0,
+    array(
+      array(
+        'slug' => 'goodmotion-blocks',
+        'title' => __( 'Good Blocks', 'goodmotion-theme' ),
+      )
+    )
+  );
+  return $categories;
+}
+
 
 add_action('init', __NAMESPACE__ . '\gutenberg_css');
+add_filter( 'block_categories_all',  __NAMESPACE__ . '\block_category', 10, 2);
 add_action('after_setup_theme', __NAMESPACE__ . '\gutenberg_settings');
 add_filter('allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2);
 add_action('enqueue_block_editor_assets', __NAMESPACE__ . '\editor_enqueue');

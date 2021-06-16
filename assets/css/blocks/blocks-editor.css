@@ -1,3 +1,7 @@
 @import 'content/style.css';
 @import 'paragraph/style.css';
 @import 'media/style.css';
+@import 'WrapperLine/style.css';
+@import 'WrapperLine/editor.css';
+@import "ImageTxt/style.css";
+@import "ImageTxt/editor.css";

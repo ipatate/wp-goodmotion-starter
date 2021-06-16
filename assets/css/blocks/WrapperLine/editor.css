@@ -1,0 +1,12 @@
+.wp-block-goodmotion-gm-wrapper-line {
+  @apply min-h-[200px] border border-gray-200;
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks {
+  @apply flex w-full flex-row
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks .block-editor-block-list__layout {
+  @apply flex w-full flex-row
+}
+.wp-block-goodmotion-gm-wrapper-line .block-editor-inner-blocks .block-editor-block-list__layout .block-list-appender {
+  @apply z-[100]
+}
