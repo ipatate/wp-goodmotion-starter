@@ -2,4 +2,6 @@
 @import 'paragraph/style.css';
 @import 'media/style.css';
 @import "WrapperLine/style.css";
+@import "WrapperFullText/style.css";
 @import "ImageTxt/style.css";
+@import "FullImgTxt/style.css";

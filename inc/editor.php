@@ -49,6 +49,8 @@ function gutenberg_settings()
   add_theme_support('custom-spacing');
   add_theme_support('wp-block-styles');
   remove_theme_support('core-block-patterns');
+  // remove block for theme
+  remove_theme_support( 'block-templates' );
 }
 
 

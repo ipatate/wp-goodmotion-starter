@@ -3,5 +3,9 @@
 @import 'media/style.css';
 @import 'WrapperLine/style.css';
 @import 'WrapperLine/editor.css';
+@import 'WrapperFullText/style.css';
+@import 'WrapperFullText/editor.css';
 @import "ImageTxt/style.css";
 @import "ImageTxt/editor.css";
+@import "FullImgTxt/style.css";
+@import "FullImgTxt/editor.css";

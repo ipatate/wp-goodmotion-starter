@@ -1,0 +1,19 @@
+.wp-block-goodmotion-gm-block-full-img-txt .gm-full-img {
+  @apply relative
+}
+.wp-block-goodmotion-gm-block-full-img-txt .gm-full-img .gm-block-edit-image-container {
+  @apply absolute top-2 right-2
+}
+
+
+  .wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner > div.block-editor-rich-text__editable:first-child {
+  @apply text-3xl font-bold mb-6 text-accent;
+}
+
+.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner > div.block-editor-rich-text__editable:nth-child(2n) {
+  @apply text-gray-600
+}
+
+.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner .gm-full-content-action .block-editor-url-input__button {
+  @apply ml-2
+}

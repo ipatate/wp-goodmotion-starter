@@ -3,12 +3,12 @@ body {
 }
 
 .content-wrapper {
-  @apply min-h-screen py-6;
+  @apply min-h-screen pb-6;
 }
 
 /** article page content */
 .article-content {
-  @apply px-4 mx-auto prose lg:prose-lg max-w-none md:px-2 xl:px-0;
+  @apply px-0 mx-auto prose lg:prose-lg max-w-none md:px-0 xl:px-0;
 }
 
 .article-content p {
