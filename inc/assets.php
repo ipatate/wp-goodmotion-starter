@@ -15,6 +15,15 @@ function getManifest() {
  */
 function enqueue_scripts()
 {
+  add_filter('script_loader_tag', function($tag, $handle, $src) {
+    if ( strpos($handle,'goodmotion-starter-theme') === false ) {
+      return $tag;
+    }
+    // change the script tag by adding type="module" and return it.
+    $tag = '<script type="module" crossorigin src="' . esc_url( $src ) . '"></script>';
+    return $tag;
+  } , 10, 3);
+  
     add_action('wp_enqueue_scripts', function () {
         $path = get_template_directory_uri();
 
@@ -32,16 +41,6 @@ function enqueue_scripts()
             }
 
         } else {
-
-            // add module attribute for dev
-            add_filter('script_loader_tag', function($tag, $handle, $src) {
-                if ( 'goodmotion-starter-theme' !== $handle ) {
-                    return $tag;
-                }
-                // change the script tag by adding type="module" and return it.
-                $tag = '<script type="module" crossorigin src="' . esc_url( $src ) . '"></script>';
-                return $tag;
-            } , 10, 3);
 
             wp_enqueue_script('goodmotion-starter-theme', 'http://localhost:3000/main.js', [
 //                'wp-block-editor',

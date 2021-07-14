@@ -1,0 +1,92 @@
+.gm-sharing {
+  @apply flex flex-wrap text-sm mt-12 pt-4  max-w-6xl mx-auto;
+}
+
+.gm-sharing .resp-sharing-button__link,
+.gm-sharing .resp-sharing-button__icon {
+  @apply flex items-center;
+}
+
+.gm-sharing .resp-sharing-button__link {
+  @apply mr-4 mt-4 text-white no-underline;
+}
+
+.gm-sharing .resp-sharing-button {
+  @apply flex items-center rounded py-2 px-3 transition;
+}
+
+.gm-sharing .resp-sharing-button__icon svg {
+  @apply w-5 h-5 mr-1;
+}
+/* Non solid icons get a stroke */
+.gm-sharing .resp-sharing-button__icon {
+  @apply mr-1;
+}
+
+/* Solid icons get a fill */
+.gm-sharing .resp-sharing-button__icon--solid,
+.gm-sharing .resp-sharing-button__icon--solidcircle {
+  fill: #FFF;
+  stroke: none;
+}
+
+.gm-sharing .resp-sharing-button--twitter {
+  background-color: #55ACEE;
+  border-color: #55ACEE;
+}
+
+.gm-sharing .resp-sharing-button--twitter:hover {
+  background-color: #2795E9;
+}
+
+.gm-sharing .resp-sharing-button--facebook {
+  background-color: #3B5998;
+  border-color: #3B5998;
+}
+
+.gm-sharing .resp-sharing-button--facebook:hover {
+  background-color: #2D4373;
+}
+
+.gm-sharing .resp-sharing-button--linkedin {
+  background-color: #0077B5;
+  border-color: #0077B5;
+}
+
+.gm-sharing .resp-sharing-button--linkedin:hover {
+  background-color: #046293;
+}
+
+.gm-sharing .resp-sharing-button--email {
+  background-color: #777;
+  border-color: #777;
+}
+
+.gm-sharing .resp-sharing-button--email:hover {
+  background-color: #5E5E5E;
+}
+
+.gm-sharing .resp-sharing-button--facebook:hover,
+.gm-sharing .resp-sharing-button--facebook:active {
+  background-color: #2D4373;
+  border-color: #2D4373;
+}
+
+.gm-sharing .resp-sharing-button--twitter:hover,
+.gm-sharing .resp-sharing-button--twitter:active {
+  background-color: #2795E9;
+  border-color: #2795E9;
+}
+
+.gm-sharing .resp-sharing-button--email:hover,
+.gm-sharing .resp-sharing-button--email:active {
+  background-color: #5E5E5E;
+  border-color: #5E5E5E;
+}
+
+
+.gm-sharing .resp-sharing-button--linkedin:hover,
+.gm-sharing .resp-sharing-button--linkedin:active {
+  background-color: #046293;
+  border-color: #046293;
+}

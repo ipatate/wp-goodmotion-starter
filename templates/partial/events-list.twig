@@ -1,0 +1,32 @@
+{% if isBlock is defined %}
+<h2>{{ title_list_events }}</h2>
+{% else %}
+<h1 class="gm-h">{{ title_list_events }}</h1>
+{% endif %}
+{% if isBlock is not defined %}
+<div class="gm-event-filter"></div>
+{% endif %}
+<div class="gm-events_list">
+	{% for post in posts %}
+		<div class="gm-event_card" data-filters="{{post.terms('events_categories')|join(',')}}">
+			<div class="gm-event_card-date">
+				<strong>
+					{{ post.meta("date_event")|date('d') }}
+				</strong>
+				<span>{{ post.meta("date_event")|date('F') }}</span>
+				<span>{{ post.meta("date_event")|date('Y') }}</span>
+			</div>
+			<div class="gm-event_card-cat">
+				{{ post.terms('events_categories')|join(' / ') }}
+			</div>
+			<h2 class="gm-event_card-title">
+				<a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a>
+			</h2>
+			<a class="gm-event_card-button" href="{{ post.link }}" title="{{ post.title }}">
+				<span>{{ __( 'See more', 'goodmotion-theme' ) }}</span>
+			</a>
+		</div>
+	{% else %}
+		<div>{{ __( 'None events', 'goodmotion-theme' ) }}</div>
+	{% endfor %}
+</div>

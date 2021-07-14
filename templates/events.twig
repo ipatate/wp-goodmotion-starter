@@ -1,0 +1,7 @@
+{% extends "base.twig" %} {% block content %}
+<div class="content-wrapper">
+  {% include 'partial/events-list.twig' %} {% include 'partial/pagination.twig'
+  with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size:
+  2}) } %}
+</div>
+{% endblock %}

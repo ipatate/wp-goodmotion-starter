@@ -15,6 +15,7 @@ export default defineConfig({
       : `/wp-content/themes/${themeDir}/dist/`,
   root: '',
   build: {
+    polyfillDynamicImport: true,
     // output dir for production build
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,

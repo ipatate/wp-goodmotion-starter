@@ -5,6 +5,8 @@
 @import "tailwindcss/utilities";
 @import "./settings/variables.css";
 
+@import "flickity/dist/flickity.min.css";
+
 /** GLOBAL */
 @import './shared.css';
 @import "./animation.css";

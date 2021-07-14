@@ -32,7 +32,11 @@
 }
 
 .gm-hero > div > div {
-  @apply relative max-w-full;
+  @apply relative max-w-full overflow-hidden;
+}
+
+.gm-hero > div > div > div img, .gm-hero > div > div > div picture {
+  @apply object-cover w-full;
 }
 
 /** mask over picture */

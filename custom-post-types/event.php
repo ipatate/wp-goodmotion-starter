@@ -32,16 +32,16 @@ function custom_post_type()
       'supports' => array(
         'title',
         'thumbnail',
-        'editor'
+        'editor',
       ),
       'public'      => true,
-      'has_archive' => false,
+      'has_archive' => true,
       'menu_position' => 4,
       'menu_icon' => 'dashicons-calendar',
-      'rewrite'     => array('slug' => 'events', 'with_front' => false),
+      'rewrite'     => array('slug' => 'events', 'with_front' => true),
       'show_in_graphql' => true,
-      'publicly_queryable'  => false,
-      //   'hierarchical' => true,
+      'publicly_queryable'  => true,
+      'hierarchical' => true,
       'graphql_single_name' => 'Event',
       'graphql_plural_name' => 'Events',
     )

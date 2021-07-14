@@ -1,0 +1,78 @@
+.gm-instagram-feed {
+  @apply w-full pb-3;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element {
+  @apply relative flex items-start justify-center h-[300px] w-[300px] h-[500px] w-[500px] overflow-hidden m-1;
+}
+.gm-instagram-feed div.gm-instagram-feed-element a {
+  @apply absolute z-10 flex items-center justify-center w-10 h-10 text-white rounded-full bg-accent top-2 right-2;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element a svg {
+  @apply w-5 fill-current relative top-[2px];
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element img {
+  @apply w-full h-full m-0;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element button {
+  @apply absolute z-20 flex items-center justify-center w-16 h-16 text-accent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element button svg {
+  @apply w-full h-full;
+}
+
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  button.gm-instagram-video-paused
+  .gm-pause-icon {
+  @apply hidden;
+}
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  button.gm-instagram-video-paused
+  .gm-play-icon {
+  @apply block;
+}
+
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  button.gm-instagram-video-played
+  .gm-play-icon {
+  @apply hidden;
+}
+
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  button.gm-instagram-video-played
+  .gm-pause-icon {
+  @apply block;
+}
+
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  .gm-instagram-feed-element-info {
+  @apply absolute bottom-0 left-0 right-0 flex text-xs text-white bg-accent opacity-80 min-h-[50px] items-stretch justify-center;
+}
+
+.gm-instagram-feed
+  div.gm-instagram-feed-element
+  .gm-instagram-feed-element-info
+  p {
+  @apply flex items-start justify-center;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element::after {
+  @apply absolute top-0 bottom-0 left-0 right-0 transition bg-gray-800 opacity-20;
+  content: '';
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element:hover::after {
+  @apply opacity-10;
+}

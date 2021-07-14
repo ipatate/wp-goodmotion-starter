@@ -41,3 +41,16 @@ body {
 .gm-instagram-icon {
   @apply bg-no-repeat bg-contain bg-instagram;
 }
+
+/** carousel flickity */
+.flickity-page-dots {
+  @apply w-full m-0 max-w-full bottom-[-3rem] flex justify-center items-center;
+}
+
+.flickity-page-dots li.dot {
+  @apply rounded-none text-xs h-1;
+}
+
+.flickity-page-dots li.dot:before {
+  @apply hidden;
+}
