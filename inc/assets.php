@@ -23,7 +23,7 @@ function enqueue_scripts()
     $tag = '<script type="module" crossorigin src="' . esc_url( $src ) . '"></script>';
     return $tag;
   } , 10, 3);
-  
+
     add_action('wp_enqueue_scripts', function () {
         $path = get_template_directory_uri();
 
@@ -31,13 +31,25 @@ function enqueue_scripts()
             // get file name from manifest
             $config = getManifest();
             $files = get_object_vars($config);
+            // set polyfill on first
+//            foreach ($files as $key => $value) {
+//              if($key === 'vite/legacy-polyfills') {
+//                $file = $config->{$key}->file;
+//                // get token file
+//                $k = explode('.', $file);
+//                $token = $k[1];
+//                wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
+//              }
+//            }
 
             foreach ($files as $key => $value) {
+//              if($key !== 'vite/legacy-polyfills') {
                 $file = $config->{$key}->file;
                 // get token file
                 $k = explode('.', $file);
                 $token = $k[1];
                 wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
+//              }
             }
 
         } else {

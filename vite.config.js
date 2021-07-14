@@ -1,5 +1,6 @@
 import { resolve, sep } from 'path'
 import { defineConfig } from 'vite'
+import legacy from '@vitejs/plugin-legacy'
 import liveReload from 'vite-plugin-live-reload'
 
 // find theme dir name
@@ -8,19 +9,30 @@ const themeDir = _path[_path.length - 1]
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [liveReload([__dirname + '/**/*.php', __dirname + '/**/*.twig'])],
+  plugins: [liveReload([__dirname + '/**/*.php', __dirname + '/**/*.twig']),
+  //   legacy({
+  //   targets: [
+  //     'last 3 versions',
+  //     'not ie_mob > 0',
+  //     'not op_mini all',
+  //     'not op_mob <= 12.1',
+  //     'not ie <= 11'
+  //   ],
+  //   polyfills: [],
+  //   additionalLegacyPolyfills: []
+  // })
+  ],
   base:
     process.env.APP_ENV === 'development'
       ? `/wp-content/themes/${themeDir}/`
       : `/wp-content/themes/${themeDir}/dist/`,
   root: '',
   build: {
-    polyfillDynamicImport: true,
     // output dir for production build
     outDir: resolve(__dirname, 'dist'),
     emptyOutDir: true,
     manifest: true,
-    target: 'es2015',
+    target: 'es6',
     rollupOptions: {
       input: resolve(__dirname, 'main.js'),
     },

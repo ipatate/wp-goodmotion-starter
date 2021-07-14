@@ -54,3 +54,7 @@ body {
 .flickity-page-dots li.dot:before {
   @apply hidden;
 }
+
+.gm-is-inner {
+  opacity: .2;
+}
