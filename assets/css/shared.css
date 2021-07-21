@@ -2,6 +2,20 @@ body {
   @apply bg-gray-100 bg-gradient-to-b from-gray-100 to-white;
 }
 
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+
 .content-wrapper {
   @apply min-h-screen pb-6;
 }
@@ -48,7 +62,7 @@ body {
 }
 
 .flickity-page-dots li.dot {
-  @apply rounded-none text-xs h-1;
+  @apply h-1 text-xs rounded-none;
 }
 
 .flickity-page-dots li.dot:before {
@@ -56,5 +70,4 @@ body {
 }
 
 .gm-is-inner {
-  opacity: .2;
 }

@@ -8,7 +8,6 @@ function initObserver() {
           e.target.classList.add('gm-is-inner')
           observer.unobserve(e.target)
         }
-        console.log(e.target, e.intersectionRatio)
       })
     , {rootMargin: "0px 0px -100px 0px"});
 

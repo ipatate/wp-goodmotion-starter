@@ -1,0 +1,7 @@
+.wp-block-goodmotion-instagram {
+  @apply flex overflow-x-auto;
+}
+
+.gm-carousel-grouped {
+  @apply flex flex-1;
+}

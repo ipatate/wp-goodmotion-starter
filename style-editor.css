@@ -3827,12 +3827,20 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 .wp-block-goodmotion-gm-block-full-img-txt .gm-full-img {
 	position: relative;
 }
-.wp-block-goodmotion-gm-block-full-img-txt .gm-full-img .gm-block-edit-image-container {
+.wp-block-goodmotion-gm-block-full-img-txt
+  .gm-full-img
+  .gm-block-edit-image-container {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
 }
-.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner > div.block-editor-rich-text__editable:first-child {
+.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content-inner {
+	max-width: 100%;
+}
+.wp-block-goodmotion-gm-block-full-img-txt
+  .gm-full-content
+  .gm-full-content-inner
+  > div.block-editor-rich-text__editable:first-child {
 	margin-bottom: 1.5rem;
 	font-size: 1.875rem;
 	line-height: 2.25rem;
@@ -3840,11 +3848,18 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 	--tw-text-opacity: 1;
 	color: rgba(69, 11, 64, var(--tw-text-opacity));
 }
-.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner > div.block-editor-rich-text__editable:nth-child(2n) {
+.wp-block-goodmotion-gm-block-full-img-txt
+  .gm-full-content
+  .gm-full-content-inner
+  > div.block-editor-rich-text__editable:nth-child(2n) {
 	--tw-text-opacity: 1;
 	color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
-.wp-block-goodmotion-gm-block-full-img-txt .gm-full-content .gm-full-content-inner .gm-full-content-action .block-editor-url-input__button {
+.wp-block-goodmotion-gm-block-full-img-txt
+  .gm-full-content
+  .gm-full-content-inner
+  .gm-full-content-action
+  .block-editor-url-input__button {
 	margin-left: 0.5rem;
 }
 .gm-instagram-feed {
@@ -3977,6 +3992,14 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 }
 .gm-instagram-feed div.gm-instagram-feed-element:hover::after {
 	opacity: 0.1;
+}
+.wp-block-goodmotion-instagram {
+	display: flex;
+	overflow-x: auto;
+}
+.gm-carousel-grouped {
+	display: flex;
+	flex: 1 1 0%;
 }
 /** prose to editor */
 body {

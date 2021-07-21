@@ -50,23 +50,28 @@ function gutenberg_settings()
   add_theme_support('wp-block-styles');
   remove_theme_support('core-block-patterns');
   // remove block for theme
-  remove_theme_support( 'block-templates' );
+  remove_theme_support('block-templates');
 }
 
 
 /**
- * remove blocl gutenberg
+ * remove block gutenberg
  */
-function allowed_block_types($allowed_blocks)
+function allowed_block_types($allowed_blocks, $post)
 {
   $registered_blocks = \WP_Block_Type_Registry::get_instance()->get_all_registered();
 
+  require_once(dirname(__FILE__) . '/../remove_block.php');
+
   // specify all the blocks you would like to disable here
-  unset($registered_blocks['core/verse']);
-  unset($registered_blocks['core/social-link-soundcloud']);
+  foreach ($removeBlocks as $block) {
+    unset($registered_blocks[$block]);
+  }
+
 
   // now $registered_blocks contains only blocks registered by plugins, but we need keys only
   $registered_blocks = array_keys($registered_blocks);
+
 
   // merge the whitelist with plugins blocks
   $allowed_blocks = array_merge(
@@ -79,8 +84,19 @@ function allowed_block_types($allowed_blocks)
     $registered_blocks
   );
 
+  if ($post->post->post_type === 'products') :
+    $allowed_blocks = array(
+      'core/paragraph',
+      'core/heading',
+      'core/list',
+      'core/quote',
+      //      'core/embed'
+    );
+  endif;
+
   return $allowed_blocks;
 }
+
 
 
 /**
@@ -103,12 +119,16 @@ function editor_enqueue()
   wp_enqueue_script('custom-editor-script', get_template_directory_uri() . '/editor/js/reset.js', array('wp-blocks', 'wp-dom-ready', 'wp-edit-post'), '1.0', true);
 }
 
-function block_category( $categories ) {
-  array_splice($categories, 2, 0,
+function block_category($categories)
+{
+  array_splice(
+    $categories,
+    2,
+    0,
     array(
       array(
         'slug' => 'goodmotion-blocks',
-        'title' => __( 'Good Blocks', 'goodmotion-theme' ),
+        'title' => __('Good Blocks', 'goodmotion-theme'),
       )
     )
   );
@@ -117,7 +137,9 @@ function block_category( $categories ) {
 
 
 add_action('init', __NAMESPACE__ . '\gutenberg_css');
-add_filter( 'block_categories_all',  __NAMESPACE__ . '\block_category', 10, 2);
-add_action('after_setup_theme', __NAMESPACE__ . '\gutenberg_settings');
+
+add_filter('block_categories_all',  __NAMESPACE__ . '\block_category', 10, 2);
 add_filter('allowed_block_types_all', __NAMESPACE__ . '\allowed_block_types', 10, 2);
+//
+add_action('after_setup_theme', __NAMESPACE__ . '\gutenberg_settings');
 add_action('enqueue_block_editor_assets', __NAMESPACE__ . '\editor_enqueue');
