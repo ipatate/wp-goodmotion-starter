@@ -6,10 +6,10 @@
 }
 
 .gm-burger {
-  @apply relative z-30 flex items-center w-10 h-10 transform bg-transparent cursor-pointer;
+  @apply relative z-30 flex items-center w-10 transform bg-transparent cursor-pointer h-9;
 }
 .gm-burger span {
-  @apply absolute left-0 block w-full h-2 transition transform bg-white;
+  @apply absolute left-0 block w-full h-[5px] transition transform bg-white;
 }
 
 .gm-burger span:nth-child(1) {
@@ -30,7 +30,7 @@
 }
 
 .gm-nav-open .gm-burger span:nth-child(1) {
-  @apply w-[3.2rem] rotate-45 -top-0.5 left-0.5;
+  @apply w-[3.1rem] rotate-45 -top-0.5 left-0.5;
 }
 
 .gm-nav-open .gm-burger span:nth-child(2) {
@@ -38,7 +38,7 @@
 }
 
 .gm-nav-open .gm-burger span:nth-child(3) {
-  @apply w-[3.2rem] -rotate-45 -bottom-0.5 left-0.5;
+  @apply w-[3.1rem] -rotate-45 -bottom-0.5 left-0.5;
 }
 
 /**

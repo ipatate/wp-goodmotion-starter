@@ -1,9 +1,14 @@
 .wp-block-goodmotion-gm-wrapper-full-text {
-  @apply flex w-full flex-col justify-center items-center py-6 px-6 md:px-20 min-h-[300px];
+  @apply flex w-full flex-col justify-center items-center py-6 px-6 md:px-20 md:py-20 min-h-[300px];
 }
 
-.wp-block-goodmotion-gm-wrapper-full-text h1, .wp-block-goodmotion-gm-wrapper-full-text h2, .wp-block-goodmotion-gm-wrapper-full-text h3, .wp-block-goodmotion-gm-wrapper-full-text h4, .wp-block-goodmotion-gm-wrapper-full-text h5, .wp-block-goodmotion-gm-wrapper-full-text h6 {
-  @apply my-2
+.wp-block-goodmotion-gm-wrapper-full-text h1,
+.wp-block-goodmotion-gm-wrapper-full-text h2,
+.wp-block-goodmotion-gm-wrapper-full-text h3,
+.wp-block-goodmotion-gm-wrapper-full-text h4,
+.wp-block-goodmotion-gm-wrapper-full-text h5,
+.wp-block-goodmotion-gm-wrapper-full-text h6 {
+  @apply my-4 text-4xl text-center md:text-5xl;
 }
 
 .wp-block-goodmotion-gm-wrapper-full-text p {
