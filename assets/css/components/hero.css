@@ -3,7 +3,7 @@
 }
 
 .gm-hero-container {
-  @apply relative w-full max-w-full overflow-hidden;
+  @apply relative w-full max-w-full min-w-full overflow-hidden;
 }
 
 .gm-hero-autoplay {
@@ -24,19 +24,25 @@
 }
 
 .gm-hero {
-  @apply relative w-full max-w-full;
+  @apply relative w-full max-w-full min-w-full;
 }
 
 .gm-hero > div {
   @apply flex items-start max-h-screen;
 }
 
+.gm-hero-wrapper-page .gm-hero > div {
+  @apply max-h-[70vh];
+}
+
 .gm-hero > div > div {
   @apply relative max-w-full overflow-hidden;
 }
 
-.gm-hero > div > div > div img, .gm-hero > div > div > div picture {
-  @apply object-cover w-full;
+.gm-hero > div > div > div img,
+.gm-hero > div > div > div picture {
+  @apply object-cover w-full min-w-full min-h-screen;
+  aspect-ratio: attr(width) / attr(height);
 }
 
 /** mask over picture */

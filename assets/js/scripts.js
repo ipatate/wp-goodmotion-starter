@@ -1,3 +1,4 @@
+import './lazyload'
 import Flickity from 'flickity'
 import initNav from './navigation'
 import initHeader from './scroll'
@@ -15,7 +16,9 @@ function main() {
   // carousel
   initCarousel()
 
-  initObserver();
+  initObserver()
+
+  const lazyLoadInstance = new LazyLoad({})
 }
 document.addEventListener('DOMContentLoaded', () => {
   main()

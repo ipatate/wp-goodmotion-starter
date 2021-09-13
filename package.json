@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "cross-env APP_ENV=development vite & yarn watch:editor",
-    "build": "APP_ENV=production vite build && build:editor",
+    "build": "APP_ENV=production vite build && yarn build:editor",
     "watch:editor": "APP_ENV=development node_modules/.bin/postcss -w --verbose --no-map assets/css/editor.css -o style-editor.css",
     "build:editor": "NODE_ENV=production node_modules/.bin/postcss assets/css/editor.css -o style-editor.css"
   },

@@ -1,5 +1,5 @@
 {% if post.meta("page_hero")%}
-  <header class="gm-hero-wrapper">
+  <header class="gm-hero-wrapper {% if fn('is_front_page') == false %}gm-hero-wrapper-page{% endif %}">
     <div class="gm-hero-container" data-autoplay="{% if post.meta('page_hero_delay') != '' %}{{ post.meta
       ('page_hero_delay') }}{% else %}7000{% endif %}" data-arrow="{% if post.meta('page_hero_show_arrow') %}true{%
       else %}false{% endif %}"
@@ -43,18 +43,26 @@
             <picture>
               <source
                 media="(max-width: 600px)"
-                srcset="{{Image(item.image).src|resize(600, 550)}}"
+                srcset="{{Image(item.image).src|resize(600, 550)|tojpg}}"
+                type="image/jpeg"
               />
+              <source  media="(max-width: 600px)" srcset="{{Image(item.image).src|resize(600, 550)|tojpg|towebp}}" type="image/webp">
               <source
                 media="(max-width: 1000px)"
-                srcset="{{Image(item.image).src|resize(1000, 600)}}"
+                srcset="{{Image(item.image).src|resize(1000, 600)|tojpg}}"
+                 type="image/jpeg"
               />
+              <source  media="(max-width: 1000px)" srcset="{{Image(item.image).src|resize(1000, 600)|tojpg|towebp}}" type="image/webp">
+                 <source srcset="{{Image(item.image).src|resize(1400, 800)|tojpg|towebp}}" type="image/webp">
               <img
                 role="tabpanel"
                 class="gm-hero-cell"
                 id="carousel-{{ key }}"
-                src="{{Image(item.image).src|resize(1400, 800)}}"
+                src="{{Image(item.image).src|resize(1400, 800)|tojpg}}"
                 alt="{{ item.image.alt }}"
+                width="1400"
+                height="800"
+                type="image/jpeg"
                 loading="{%  if key == 0 %}eager{% else %}lazy{% endif %}"
               />
             </picture>

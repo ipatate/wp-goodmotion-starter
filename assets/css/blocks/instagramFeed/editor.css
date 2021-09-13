@@ -2,6 +2,10 @@
   @apply flex overflow-x-auto;
 }
 
+.wp-block-goodmotion-instagram .gm-instagram-feed .gm-instagram-feed-title {
+  @apply text-4xl;
+}
+
 .gm-carousel-grouped {
   @apply flex flex-1;
 }

@@ -2,6 +2,15 @@ body {
   @apply bg-gray-100 bg-gradient-to-b from-gray-100 to-white;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Norican', cursive;
+}
+
 .screen-reader-text {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px);

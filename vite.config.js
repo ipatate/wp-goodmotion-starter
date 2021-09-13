@@ -9,18 +9,12 @@ const themeDir = _path[_path.length - 1]
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [liveReload([__dirname + '/**/*.php', __dirname + '/**/*.twig']),
-  //   legacy({
-  //   targets: [
-  //     'last 3 versions',
-  //     'not ie_mob > 0',
-  //     'not op_mini all',
-  //     'not op_mob <= 12.1',
-  //     'not ie <= 11'
-  //   ],
-  //   polyfills: [],
-  //   additionalLegacyPolyfills: []
-  // })
+  plugins: [
+    liveReload([__dirname + '/**/*.php', __dirname + '/**/*.twig']),
+    legacy({
+      targets: ['ie >= 11'],
+      additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+    }),
   ],
   base:
     process.env.APP_ENV === 'development'

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
-      display: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
+      display: ['Norican', 'helvetica', 'arial', 'sans-serif'],
       body: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
     },
     extend: {
@@ -18,6 +18,7 @@ module.exports = {
         logo: "url('/assets/media/logo_mercredi.png')",
         'logo-white': "url('/assets/media/logo_mercredi_blanc.png')",
         instagram: "url('/assets/media/instagram.svg')",
+        'instagram-accent': "url('/assets/media/instagram-accent.svg')",
         facebook: "url('/assets/media/facebook.svg')",
         play: "url('/assets/media/play.svg')",
         pause: "url('/assets/media/pause.svg')",

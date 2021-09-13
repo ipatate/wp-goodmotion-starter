@@ -3,7 +3,7 @@
 }
 
 .gm-header .wrapper {
-  @apply flex items-stretch w-full;
+  @apply flex items-stretch w-full mx-auto max-w-screen-2xl;
 }
 
 .gm-header .gm-logo {

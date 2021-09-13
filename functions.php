@@ -160,14 +160,20 @@ class StarterSite extends Timber\Site
     add_theme_support('menus');
   }
 
-  /** This Would return 'foo bar!'.
+  /**
    *
    * @param string $text being 'foo', then returned 'foo bar!'.
    */
-  public function myfoo($text)
+  public function prefetch($url)
   {
-    $text .= ' bar!';
-    return $text;
+    add_action(
+      'wp_head',
+      function () use ($url) {
+        var_dump($url);
+        echo '<link rel="preload" href="' . $url . '" as="image" />';
+      }
+    );
+    return null;
   }
 
   /** This is where you can add your own functions to twig.
@@ -177,7 +183,7 @@ class StarterSite extends Timber\Site
   public function add_to_twig($twig)
   {
     $twig->addExtension(new Twig\Extension\StringLoaderExtension());
-    $twig->addFilter(new Twig\TwigFilter('myfoo', array($this, 'myfoo')));
+    $twig->addFilter(new Twig\TwigFilter('prefetch', array($this, 'prefetch')));
     return $twig;
   }
 }

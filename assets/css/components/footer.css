@@ -1,34 +1,44 @@
 .gm-footer {
-  @apply bg-accent px-2 lg:px-12 py-8 lg:py-20 w-full flex flex-col-reverse md:flex-row items-stretch text-white min-h-[300px];
+  @apply bg-accent;
 }
 
-.gm-footer > div {
+.gm-footer .gm-wrapper {
+  @apply flex flex-col items-stretch text-white min-h-[300px] px-2 lg:px-12 pt-8 pb-3 w-full mx-auto max-w-screen-2xl;
+}
+
+.gm-footer .gm-wrapper > div {
   @apply flex-1 my-3;
 }
 
 /** bloc logo */
-.gm-footer .gm-logo {
-  @apply flex flex-row md:flex-col;
+.gm-footer .gm-wrapper .gm-logo {
+  @apply flex flex-row justify-center;
 }
 
-.gm-footer .gm-logo p {
+.gm-footer .gm-wrapper .gm-logo p {
   @apply mx-0 my-2 text-sm text-white;
 }
 
-.gm-footer .gm-logo a {
-  @apply relative flex z-10 w-[300px] h-14 md:w-[350px] md:h-20 ml-2 my-0 bg-contain bg-logo-white bg-no-repeat;
+.gm-footer .gm-wrapper .gm-logo a {
+  @apply relative flex z-10 h-14 w-[150px] md:w-[215px] md:h-20 ml-2 my-0 bg-contain bg-logo-white bg-no-repeat;
 }
 
-.gm-footer .gm-logo a span {
+.gm-footer .gm-wrapper .gm-logo a span {
   @apply absolute top-[-1000px] left-[-1000px];
 }
 
+/** bloc content central */
+
+.gm-footer .gm-wrapper .gm-footer-content {
+  @apply flex flex-row justify-between mx-4 my-6;
+}
+
 /** bloc nav */
-.gm-footer .gm-footer-nav {
+.gm-footer .gm-wrapper .gm-footer-nav {
   @apply flex flex-col;
 }
 
-.gm-footer .gm-footer-nav a {
+.gm-footer .gm-wrapper .gm-footer-nav a {
   @apply underline;
 }
 
@@ -46,4 +56,13 @@
 
 .gm-footer-social a {
   @apply flex w-8 h-8 m-2;
+}
+
+/** bottom */
+.gm-footer-reserved {
+  @apply flex flex-row justify-end pt-4 border-t border-white;
+}
+
+.gm-footer-reserved p {
+  @apply m-0;
 }
