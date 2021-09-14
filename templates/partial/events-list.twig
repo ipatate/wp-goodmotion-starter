@@ -1,32 +1,57 @@
-{% if isBlock is defined %}
-<h2>{{ title_list_events }}</h2>
+{% if taxonomy %}
+<h1 class="gm-h gm-events-list-title">{{ __('List of events in category', 'goodmotion-theme') }} {{ taxonomy.name }} </h1>
+<a class="events-back-link" href="/agenda" title="{{ __('Back to the list of events', 'goodmotion-theme') }}">{{ __('Back to the list of events', 'goodmotion-theme') }}</a>
 {% else %}
-<h1 class="gm-h">{{ title_list_events }}</h1>
+<h1 class="gm-h gm-events-list-title">{{ __('List of events', 'goodmotion-theme') }}</h1>
+<span class="events-back-link" ></span>
 {% endif %}
-{% if isBlock is not defined %}
-<div class="gm-event-filter"></div>
-{% endif %}
-<div class="gm-events_list">
-	{% for post in posts %}
-		<div class="gm-event_card" data-filters="{{post.terms('events_categories')|join(',')}}">
-			<div class="gm-event_card-date">
-				<strong>
-					{{ post.meta("date_event")|date('d') }}
-				</strong>
-				<span>{{ post.meta("date_event")|date('F') }}</span>
-				<span>{{ post.meta("date_event")|date('Y') }}</span>
-			</div>
-			<div class="gm-event_card-cat">
-				{{ post.terms('events_categories')|join(' / ') }}
-			</div>
-			<h2 class="gm-event_card-title">
-				<a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a>
-			</h2>
-			<a class="gm-event_card-button" href="{{ post.link }}" title="{{ post.title }}">
-				<span>{{ __( 'See more', 'goodmotion-theme' ) }}</span>
-			</a>
-		</div>
-	{% else %}
-		<div>{{ __( 'None events', 'goodmotion-theme' ) }}</div>
-	{% endfor %}
+{% for post in posts %}
+<article
+  class="gm-events-list-element "
+  data-filters="{{post.terms('events_categories')|join(',')}}"
+  >
+  <dl class="gm-events-details">
+      <dt class="sr-only">Publié le</dt>
+      <dd class="gm-events-date">
+        <time dateTime="{{post.meta("date_event")|date('c')}}">
+          {{ __( 'The', 'goodmotion-theme' ) }} {{ post.meta("date_event")|date("d M. Y") }}
+        </time>
+      </dd>
+       <dt class="sr-only">Categories</dt>
+      <dd class="gm-events-categorie">
+        {% for term in post.terms('events_categories') %}
+          <a href="{{term.link}}" title="{{term.title}}">{{term.title}}</a>
+          {% if loop.last == false %}<span class="event-category-separator">▸</span>{% endif %}
+        {% endfor %}
+      </dd>
+    </dl>
+    <div class="gm-events-content">
+      <h2>
+        <a href="{{ post.link }}" title="{{ post.title }}">{{ post.title }}</a>
+      </h2>
+      <p>
+       {{ post.preview.length(40).read_more(false) }}
+      </p>
+      <div class="gm-events-link">
+        <a href="{{ post.link }}" title="{{ post.title }}">
+          Lire la suite →
+        </a>
+      </div>
+    </div>
+    <div class="gm-events-media">
+       {% if post.thumbnail.src %}
+        <a href="{{ post.link }}" title="{{ post.title }}">
+          <picture>
+            <source media="(max-width: 500px)" srcset="{{Image(post.thumbnail.src).src|resize(500, 170)|tojpg}}">
+            <source media="(max-width: 769px)" srcset="{{Image(post.thumbnail.src).src|resize(769, 200)|tojpg}}">
+            <source media="(max-width: 1024px)" srcset="{{Image(post.thumbnail.src).src|resize(250,250)|tojpg}}">
+            <img src="{{Image(post.thumbnail.src).src|resize(250, 180)|tojpg}}" alt="{{ post.thumbnail.alt }}">
+          </picture>
+        </a>
+          {% endif %}
+    </div>
+  </article>
+  {% else %}
+  <div>{{ __('None events', 'goodmotion-theme') }}</div>
+  {% endfor %}
 </div>

@@ -3,7 +3,7 @@
 }
 
 h2.gm-instagram-feed-title {
-  @apply flex items-center mx-2 text-4xl md:text-6xl text-accent;
+  @apply flex items-center mx-2 mb-6 text-4xl md:text-6xl text-accent;
 }
 
 h2.gm-instagram-feed-title span {
@@ -16,10 +16,10 @@ h2.gm-instagram-feed-title span {
 }
 
 .gm-instagram-feed div.gm-instagram-feed-element {
-  @apply relative flex items-start justify-center h-[250px] w-[250px] md:h-[350px] md:w-[350px] overflow-hidden m-1;
+  @apply relative flex items-start justify-center h-[320px] w-[320px] overflow-hidden m-1;
 }
 .gm-instagram-feed div.gm-instagram-feed-element a {
-  @apply absolute z-10 flex items-center justify-center w-10 h-10 text-white rounded-full bg-accent top-2 right-2;
+  @apply absolute z-30 flex items-center justify-center w-10 h-10 text-white rounded-full bg-accent top-2 right-2;
 }
 
 .gm-instagram-feed div.gm-instagram-feed-element a svg {
@@ -30,15 +30,17 @@ h2.gm-instagram-feed-title span {
   @apply w-full h-full m-0;
 }
 
+,
+.gm-instagram-feed div.gm-instagram-video {
+  @apply relative;
+}
+
 .gm-instagram-feed div.gm-instagram-feed-element button {
-  @apply absolute z-20 flex items-center justify-center w-16 h-16 text-accent;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  @apply absolute top-0 bottom-0 left-0 right-0 z-20 flex items-start justify-start w-full fill-current text-accent;
 }
 
 .gm-instagram-feed div.gm-instagram-feed-element button svg {
-  @apply w-full h-full;
+  @apply w-10 h-10 mt-2 ml-2;
 }
 
 .gm-instagram-feed

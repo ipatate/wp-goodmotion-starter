@@ -34,11 +34,14 @@ function custom_post_type()
         'thumbnail',
         'editor',
       ),
+      'taxonomies' => [
+        'events_categories',
+      ],
       'public'      => true,
       'has_archive' => true,
       'menu_position' => 4,
       'menu_icon' => 'dashicons-calendar',
-      'rewrite'     => array('slug' => 'events', 'with_front' => true),
+      'rewrite'     => array('slug' => 'agenda', 'with_front' => true),
       'show_in_graphql' => true,
       'publicly_queryable'  => true,
       'hierarchical' => true,
@@ -48,11 +51,13 @@ function custom_post_type()
   );
 
   register_taxonomy('events_categories', 'events', [
-    'public' => false,
+    'public' => true,
     'show_ui' => true,
-    // 'show_in_menu' => true,
-    // 'show_in_nav_menus' => true,
-    'hierarchical' => true, 'show_tagcloud' => false, 'show_admin_column' => true,             'show_in_rest' => false,
+    'show_in_menu' => true,
+    'show_in_nav_menus' => true,
+    'hierarchical' => true, 'show_tagcloud' => false, 'show_admin_column' => true,             'show_in_rest' => true,
+    'rewrite'     => array('slug' => 'agenda-categorie', 'with_front' => true),
+
   ]);
   //    add_theme_support( 'post-thumbnails', array( 'models' ) );
 }

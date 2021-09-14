@@ -3908,6 +3908,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 h2.gm-instagram-feed-title {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
+	margin-bottom: 1.5rem;
 	display: flex;
 	align-items: center;
 	font-size: 2.25rem;
@@ -3962,27 +3963,17 @@ h2.gm-instagram-feed-title span {
 	position: relative;
 	margin: 0.25rem;
 	display: flex;
-	height: 250px;
-	width: 250px;
+	height: 320px;
+	width: 320px;
 	align-items: flex-start;
 	justify-content: center;
 	overflow: hidden;
-}
-@media (min-width: 768px) {
-
-	.gm-instagram-feed div.gm-instagram-feed-element {
-		height: 350px;
-	}
-
-	.gm-instagram-feed div.gm-instagram-feed-element {
-		width: 350px;
-	}
 }
 .gm-instagram-feed div.gm-instagram-feed-element a {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
-	z-index: 10;
+	z-index: 30;
 	display: flex;
 	height: 2.5rem;
 	width: 2.5rem;
@@ -4005,23 +3996,29 @@ h2.gm-instagram-feed-title span {
 	height: 100%;
 	width: 100%;
 }
+, .gm-instagram-feed div.gm-instagram-video {
+	position: relative;
+}
 .gm-instagram-feed div.gm-instagram-feed-element button {
 	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
 	z-index: 20;
 	display: flex;
-	height: 4rem;
-	width: 4rem;
-	align-items: center;
-	justify-content: center;
+	width: 100%;
+	align-items: flex-start;
+	justify-content: flex-start;
+	fill: currentColor;
 	--tw-text-opacity: 1;
 	color: rgba(69, 11, 64, var(--tw-text-opacity));
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 .gm-instagram-feed div.gm-instagram-feed-element button svg {
-	height: 100%;
-	width: 100%;
+	margin-top: 0.5rem;
+	margin-left: 0.5rem;
+	height: 2.5rem;
+	width: 2.5rem;
 }
 .gm-instagram-feed
   div.gm-instagram-feed-element

@@ -34,8 +34,9 @@ h6 {
   @apply px-3 mx-auto prose lg:prose-lg max-w-none md:px-0 xl:px-0;
 }
 
-.article-content > h1.article-h1 {
-  @apply text-5xl md:text-7xl;
+.article-content > h1.article-h1,
+.gm-h {
+  @apply text-5xl mb-9 md:text-7xl;
 }
 
 .article-content p {

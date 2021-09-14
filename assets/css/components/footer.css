@@ -30,12 +30,12 @@
 /** bloc content central */
 
 .gm-footer .gm-wrapper .gm-footer-content {
-  @apply flex flex-row justify-between mx-4 my-6;
+  @apply flex flex-row mx-4 my-6;
 }
 
 /** bloc nav */
 .gm-footer .gm-wrapper .gm-footer-nav {
-  @apply flex flex-col;
+  @apply flex flex-col items-center justify-center flex-1 m-0 md:mr-20;
 }
 
 .gm-footer .gm-wrapper .gm-footer-nav a {
@@ -44,7 +44,7 @@
 
 /** bloc social */
 .gm-footer-social {
-  @apply flex flex-col items-center;
+  @apply flex flex-col items-center justify-center flex-1;
 }
 .gm-footer-social > div:first-child {
   @apply text-2xl font-bold capitalize;

@@ -1,4 +1,59 @@
-.gm-events-detail {
-  @apply max-w-6xl mx-auto;
+.gm-events-list-title {
+  @apply mx-4 mb-10 max-w-none;
+}
 
+.events-back-link {
+  @apply flex mx-4 mt-10 mb-16 text-xl underline max-w-none;
+}
+
+.gm-events-list-element {
+  @apply grid grid-cols-1 mb-10 space-y-2 md:mb-20 md:grid md:grid-cols-12 md:gap-6 md:mx-2 xl:gap-6 xl:space-y-0 xl:items-stretch;
+}
+
+/** left elements */
+.gm-events-list-element .gm-events-details {
+  @apply order-2 px-3 py-3 border-r border-gray-300 md:order-1 md:py-0 md:col-start-1 md:col-end-4 lg:col-start-1 lg:col-end-3 xl:col-start-1 xl:col-end-3;
+}
+
+.gm-events-list-element .gm-events-date {
+  @apply text-xl font-bold leading-6 text-gray-800;
+}
+
+.gm-events-list-element .gm-events-categorie {
+  @apply my-2 italic text-gray-600 md:my-4;
+}
+
+.gm-events-list-element .gm-events-categorie a {
+  @apply flex my-1 underline;
+}
+
+.gm-events-list-element .gm-events-categorie span.event-category-separator {
+  @apply mx-2 text-gray-400;
+}
+
+/** right elements */
+
+.gm-events-list-element .gm-events-content {
+  @apply order-3 mx-2 space-y-5 md:order-2 xl:col-start-3 xl:col-end-10 lg:col-start-3 lg:col-end-10 md:col-start-4 md:col-end-10;
+}
+
+.gm-events-list-element .gm-events-content h2 {
+  @apply font-sans text-4xl font-bold leading-8 tracking-tight text-accent;
+}
+
+.gm-events-list-element .gm-events-content > p {
+  @apply prose text-gray-500 max-w-none;
+}
+
+.gm-events-list-element .gm-events-content .gm-events-link {
+  @apply text-base font-medium leading-6;
+}
+
+/** media */
+.gm-events-list-element .gm-events-media {
+  @apply flex justify-center order-1 w-full max-h-full md:order-3 md:col-start-10 md:col-end-13;
+}
+
+.gm-events-list-element .gm-events-media img {
+  @apply object-cover object-center m-0;
 }
