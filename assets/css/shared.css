@@ -8,7 +8,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Norican', cursive;
+  @apply font-sherif;
 }
 
 .screen-reader-text {
@@ -36,7 +36,7 @@ h6 {
 
 .article-content > h1.article-h1,
 .gm-h {
-  @apply text-5xl mb-9 md:text-7xl;
+  @apply px-2 mb-10 text-5xl md:mb-16 md:text-7xl;
 }
 
 .article-content p {

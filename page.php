@@ -56,4 +56,5 @@ function prefetch_images($hero)
   }
 }
 prefetch_images($timber_post->meta("page_hero"));
+
 Timber::render(array('page-' . $timber_post->post_name . '.twig', 'page.twig'), $context);

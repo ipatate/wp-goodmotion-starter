@@ -1672,12 +1672,11 @@ video {
 	align-items: center;
 	justify-content: center;
 	border-radius: 0.25rem;
-	border-radius: 0.25rem;
 	border-width: 1px;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	text-align: center;
 	text-decoration: none;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -1697,12 +1696,11 @@ video {
 	align-items: center;
 	justify-content: center;
 	border-radius: 0.25rem;
-	border-radius: 0.25rem;
 	border-width: 1px;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	text-align: center;
 	text-decoration: none;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
@@ -2985,7 +2983,7 @@ video {
 	vertical-align: text-bottom;
 }
 .font-display {
-	font-family: Norican, helvetica, arial, sans-serif;
+	font-family: Roboto, helvetica, arial, sans-serif;
 }
 .font-sans {
 	font-family: Roboto, helvetica, arial, sans-serif;
@@ -3581,9 +3579,9 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
   .wp-block-goodmotion-gm-block-img-txt
   .gm-img-text-content
   span {
+	font-family: Norican, helvetica, arial, sans-serif;
 	font-size: 2.25rem;
 	line-height: 2.5rem;
-  font-family: 'Norican', cursive;
 }
 .wp-block-goodmotion-gm-wrapper-line {
 	min-height: 200px;
@@ -3845,12 +3843,11 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote, pre, figure {
 	align-items: center;
 	justify-content: center;
 	border-radius: 0.25rem;
-	border-radius: 0.25rem;
 	border-width: 1px;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	text-align: center;
 	text-decoration: none;
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;

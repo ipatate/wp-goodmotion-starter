@@ -5,11 +5,9 @@
       {% if post.post_type == 'events' %}
       <div class="gm-events-detail">
         <div class="gm-events-date">
-          <strong>
-            {{ post.meta("date_event")|date('d') }}
-          </strong>
-          <span>{{ post.meta("date_event")|date('F') }}</span>
-          <span>{{ post.meta("date_event")|date('Y') }}</span>
+          <time dateTime="{{post.meta("date_event")|date('c')}}">
+          {{ __( 'The', 'goodmotion-theme' ) }} {{ post.meta("date_event")|date("d M. Y") }}
+        </time>
         </div>
       </div>
       {% endif %} {% if post.meta('page_show_title') == true or post.post_type

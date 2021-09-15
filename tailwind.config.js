@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     fontFamily: {
       sans: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
-      display: ['Norican', 'helvetica', 'arial', 'sans-serif'],
+      display: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
+      sherif: ['Norican', 'helvetica', 'arial', 'sans-serif'],
       body: ['Roboto', 'helvetica', 'arial', 'sans-serif'],
     },
     extend: {

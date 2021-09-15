@@ -1,9 +1,8 @@
 {% if taxonomy %}
 <h1 class="gm-h gm-events-list-title">{{ __('List of events in category', 'goodmotion-theme') }} {{ taxonomy.name }} </h1>
-<a class="events-back-link" href="/agenda" title="{{ __('Back to the list of events', 'goodmotion-theme') }}">{{ __('Back to the list of events', 'goodmotion-theme') }}</a>
+<a class="events-back-link" href="/agenda" title="{{ __('Back to the list of events', 'goodmotion-theme') }}">← {{ __('Back to the list of events', 'goodmotion-theme') }}</a>
 {% else %}
 <h1 class="gm-h gm-events-list-title">{{ __('List of events', 'goodmotion-theme') }}</h1>
-<span class="events-back-link" ></span>
 {% endif %}
 {% for post in posts %}
 <article
@@ -21,7 +20,6 @@
       <dd class="gm-events-categorie">
         {% for term in post.terms('events_categories') %}
           <a href="{{term.link}}" title="{{term.title}}">{{term.title}}</a>
-          {% if loop.last == false %}<span class="event-category-separator">▸</span>{% endif %}
         {% endfor %}
       </dd>
     </dl>
@@ -39,13 +37,14 @@
       </div>
     </div>
     <div class="gm-events-media">
-       {% if post.thumbnail.src %}
+      {% if post.meta("page_hero") %}
+      {% set img = post.meta("page_hero")[0] %}
         <a href="{{ post.link }}" title="{{ post.title }}">
           <picture>
-            <source media="(max-width: 500px)" srcset="{{Image(post.thumbnail.src).src|resize(500, 170)|tojpg}}">
-            <source media="(max-width: 769px)" srcset="{{Image(post.thumbnail.src).src|resize(769, 200)|tojpg}}">
-            <source media="(max-width: 1024px)" srcset="{{Image(post.thumbnail.src).src|resize(250,250)|tojpg}}">
-            <img src="{{Image(post.thumbnail.src).src|resize(250, 180)|tojpg}}" alt="{{ post.thumbnail.alt }}">
+            <source media="(max-width: 500px)" srcset="{{Image(img.image).src|resize(500, 250)|tojpg}}">
+            <source media="(max-width: 769px)" srcset="{{Image(img.image).src|resize(769, 250)|tojpg}}">
+            <source media="(max-width: 1024px)" srcset="{{Image(img.image).src|resize(250,250)|tojpg}}">
+            <img src="{{Image(img.image).src|resize(250, 180)|tojpg}}" alt="{{ img.image.alt }}">
           </picture>
         </a>
           {% endif %}

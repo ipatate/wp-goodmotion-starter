@@ -169,19 +169,19 @@
         ],
         [
             {
-                "param": "page_template",
+                "param": "post_type",
                 "operator": "==",
-                "value": "default"
+                "value": "events"
             }
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1623405428
+    "modified": 1631726349
 }

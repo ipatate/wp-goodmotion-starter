@@ -31,7 +31,6 @@ function custom_post_type()
       'show_in_rest' => true,
       'supports' => array(
         'title',
-        'thumbnail',
         'editor',
       ),
       'taxonomies' => [

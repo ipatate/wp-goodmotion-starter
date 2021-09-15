@@ -6,6 +6,5 @@
   .wp-block-goodmotion-gm-block-img-txt
   .gm-img-text-content
   span {
-  @apply text-4xl;
-  font-family: 'Norican', cursive;
+  @apply text-4xl font-sherif;
 }

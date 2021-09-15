@@ -18,6 +18,7 @@ function enqueue_scripts()
 {
   add_filter('script_loader_tag', function ($tag, $handle, $src) {
     if (strpos($handle, 'goodmotion-starter-theme') === false) {
+      // return str_replace(' src', ' async src', $tag);
       return $tag;
     }
     // change the script tag by adding type="module" and return it.

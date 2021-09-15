@@ -18,6 +18,27 @@
             "display_format": "d\/m\/Y",
             "return_format": "Y-m-d",
             "first_day": 1
+        },
+        {
+            "key": "field_61422a6cdfea3",
+            "label": "Price",
+            "name": "price_event",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
         }
     ],
     "location": [
@@ -37,5 +58,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1624191273
+    "modified": 1631726219
 }

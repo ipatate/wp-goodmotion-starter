@@ -1,11 +1,11 @@
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center my-2 transition rounded text-center py-2 px-6 border no-underline rounded
+    @apply inline-flex items-center justify-center px-6 py-2 my-2 text-center no-underline transition border rounded;
   }
   .btn-primary {
-    @apply btn bg-accent hover:opacity-80 text-white;
+    @apply text-white btn bg-accent hover:opacity-80;
   }
   .btn-light {
-    @apply btn bg-gray-100 hover:bg-gray-200 text-gray-800;
+    @apply text-gray-800 bg-gray-100 btn hover:bg-gray-200;
   }
 }

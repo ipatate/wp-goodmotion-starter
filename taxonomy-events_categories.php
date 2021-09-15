@@ -1,12 +1,17 @@
-<?php /* Template Name: Events page Template */
+<?php /* Template Name: Events categorie page Template */
 
 global $paged;
 if (!isset($paged) || !$paged) {
   $paged = 1;
 }
 
+$pages = get_pages(array(
+  'meta_key' => '_wp_page_template',
+  'meta_value' => 'taxonomy-events_categories.php'
+));
+
 $context = Timber::context();
-$timber_post = new Timber\Post();
+$timber_post = new Timber\Post(count($pages) > 0 ? $pages[0]->ID : null);
 $context['post'] = $timber_post;
 $today = date('Y-m-d');
 $query = array(
