@@ -18,6 +18,7 @@ module.exports = {
         'down-nav-mobile': "url('/assets/media/arrow-left.svg')",
         logo: "url('/assets/media/logo_mercredi.png')",
         'logo-white': "url('/assets/media/logo_mercredi_blanc.png')",
+        'logo-white-sm': "url('/assets/media/logo_mercredi_blanc-sm.png')",
         instagram: "url('/assets/media/instagram.svg')",
         'instagram-accent': "url('/assets/media/instagram-accent.svg')",
         facebook: "url('/assets/media/facebook.svg')",

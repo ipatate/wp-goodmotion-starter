@@ -1,4 +1,5 @@
 <?php /* Template Name: Events page Template */
+require_once(dirname(__FILE__) . '/inc/images.php');
 
 global $paged;
 if (!isset($paged) || !$paged) {
@@ -35,6 +36,7 @@ $query = array(
 );
 $context['posts'] = new Timber\PostQuery($query);
 $context['title_list_events'] = get_field('title_list_events', 'options');
+GoodmotionStarter\inc\images\prefetch_images($timber_post->meta("page_hero"));
 
 $templates = 'events.twig';
 

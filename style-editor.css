@@ -3916,7 +3916,7 @@ h2.gm-instagram-feed-title {
 @media (min-width: 768px) {
 
 	h2.gm-instagram-feed-title {
-		font-size: 3.75rem;
+		font-size: 3rem;
 		line-height: 1;
 	}
 }
@@ -3946,11 +3946,11 @@ h2.gm-instagram-feed-title span {
 	}
 
 	.gm-instagram-feed-title::before {
-		height: 5rem;
+		height: 4rem;
 	}
 
 	.gm-instagram-feed-title::before {
-		width: 5rem;
+		width: 4rem;
 	}
 }
 .gm-instagram-feed-title::before {
@@ -3966,7 +3966,7 @@ h2.gm-instagram-feed-title span {
 	justify-content: center;
 	overflow: hidden;
 }
-.gm-instagram-feed div.gm-instagram-feed-element a {
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-video a {
 	position: absolute;
 	top: 0.5rem;
 	right: 0.5rem;
@@ -3981,6 +3981,19 @@ h2.gm-instagram-feed-title span {
 	background-color: rgba(69, 11, 64, var(--tw-bg-opacity));
 	--tw-text-opacity: 1;
 	color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-image a span {
+	display: none;
+}
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-image a::after {
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	z-index: 30;
+	opacity: 0;
+  content: '';
 }
 .gm-instagram-feed div.gm-instagram-feed-element a svg {
 	position: relative;

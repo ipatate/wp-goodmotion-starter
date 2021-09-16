@@ -7,7 +7,7 @@
 }
 
 .gm-header .gm-logo {
-  @apply relative flex z-10 w-[300px] h-14 md:w-[350px] md:h-16 ml-2 my-0 bg-contain bg-logo-white bg-no-repeat;
+  @apply relative flex z-10 w-[300px] h-14 md:w-[350px] md:h-16 ml-2 my-0 bg-contain bg-logo-white-sm md:bg-logo-white bg-no-repeat;
 }
 
 .gm-header .gm-logo a {

@@ -40,7 +40,7 @@
 }
 
 .gm-hero-wrapper-page .gm-hero > div > div > div picture {
-  @apply relative top-[-20vh];
+  @apply relative md:top-[-20vh];
 }
 
 .gm-hero > div > div {

@@ -11,6 +11,36 @@ function getManifest()
   return json_decode($strJsonFileContents);
 }
 
+
+function addPreload()
+{
+  if (WP_ENV !== 'development') {
+    $config = getManifest();
+    $files = get_object_vars($config);
+    $save = [];
+    foreach ($files as $key => $value) {
+      if (property_exists($config->{$key}, 'assets')) {
+        $assets = $config->{$key}->assets;
+        $path = get_template_directory_uri();
+        foreach ($assets as $asset) {
+          $path_parts = pathinfo($asset);
+          if (!in_array($asset, $save)) {
+            add_action(
+              'wp_head',
+              function () use ($path, $asset, $path_parts) {
+                echo '<link rel="preload" href="' . $path . '/dist/' . $asset . '" as="' . ($path_parts['extension'] === 'woff' || $path_parts['extension'] === 'woff2' ? 'font' : 'image') . '" />';
+              }
+            );
+            array_push($save, $asset);
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
 /**
  * Register the JavaScript for the public-facing side of the site.
  */
@@ -18,8 +48,11 @@ function enqueue_scripts()
 {
   add_filter('script_loader_tag', function ($tag, $handle, $src) {
     if (strpos($handle, 'goodmotion-starter-theme') === false) {
-      // return str_replace(' src', ' async src', $tag);
-      return $tag;
+      if (is_admin()) {
+        return $tag;
+      } else {
+        return str_replace(' src', ' async src', $tag);
+      }
     }
     // change the script tag by adding type="module" and return it.
     $tag = '<script type="module" crossorigin src="' . esc_url($src) . '"></script>';
@@ -30,6 +63,7 @@ function enqueue_scripts()
     $path = get_template_directory_uri();
 
     if (WP_ENV !== 'development') {
+      addPreload();
       // get file name from manifest
       $config = getManifest();
       $files = get_object_vars($config);

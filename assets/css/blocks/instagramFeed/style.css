@@ -3,7 +3,7 @@
 }
 
 h2.gm-instagram-feed-title {
-  @apply flex items-center mx-2 mb-6 text-4xl md:text-6xl text-accent;
+  @apply flex items-center mx-2 mb-6 text-4xl md:text-5xl text-accent;
 }
 
 h2.gm-instagram-feed-title span {
@@ -11,15 +11,25 @@ h2.gm-instagram-feed-title span {
 }
 
 .gm-instagram-feed-title::before {
-  @apply block w-12 h-12 md:w-20 md:h-20 my-5 mr-4 md:mr-6 md:ml-[6%] bg-center bg-no-repeat bg-cover bg-instagram-accent;
+  @apply block w-12 h-12 md:w-16 md:h-16 my-5 mr-4 md:mr-6 md:ml-[6%] bg-center bg-no-repeat bg-cover bg-instagram-accent;
   content: '';
 }
 
 .gm-instagram-feed div.gm-instagram-feed-element {
   @apply relative flex items-start justify-center h-[320px] w-[320px] overflow-hidden m-1;
 }
-.gm-instagram-feed div.gm-instagram-feed-element a {
+
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-video a {
   @apply absolute z-30 flex items-center justify-center w-10 h-10 text-white rounded-full bg-accent top-2 right-2;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-image a span {
+  @apply hidden;
+}
+
+.gm-instagram-feed div.gm-instagram-feed-element.gm-instagram-image a::after {
+  @apply absolute top-0 bottom-0 left-0 right-0 z-30 opacity-0;
+  content: '';
 }
 
 .gm-instagram-feed div.gm-instagram-feed-element a svg {
