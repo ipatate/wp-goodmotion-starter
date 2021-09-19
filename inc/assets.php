@@ -12,31 +12,46 @@ function getManifest()
 }
 
 
+function strpos_arr($haystack, $needle)
+{
+  if (!is_array($needle)) $needle = array($needle);
+  foreach ($needle as $what) {
+    if (($pos = strpos($haystack, $what)) !== false) return $pos;
+  }
+  return false;
+}
+
+
 function addPreload()
 {
-  if (WP_ENV !== 'development') {
-    $config = getManifest();
-    $files = get_object_vars($config);
-    $save = [];
-    foreach ($files as $key => $value) {
-      if (property_exists($config->{$key}, 'assets')) {
-        $assets = $config->{$key}->assets;
-        $path = get_template_directory_uri();
-        foreach ($assets as $asset) {
-          $path_parts = pathinfo($asset);
-          if (!in_array($asset, $save)) {
-            add_action(
-              'wp_head',
-              function () use ($path, $asset, $path_parts) {
-                echo '<link rel="preload" href="' . $path . '/dist/' . $asset . '" as="' . ($path_parts['extension'] === 'woff' || $path_parts['extension'] === 'woff2' ? 'font' : 'image') . '" />';
-              }
-            );
-            array_push($save, $asset);
-          }
+  $preloadAssets = array(
+    'roboto-v27-latin-700',
+    'roboto-v27-latin-regular',
+    'Norican-Regular'
+  );
+  // if (WP_ENV !== 'development') {
+  $config = getManifest();
+  $files = get_object_vars($config);
+  $save = [];
+  foreach ($files as $key => $value) {
+    if (property_exists($config->{$key}, 'assets')) {
+      $assets = $config->{$key}->assets;
+      $path = get_template_directory_uri();
+      foreach ($assets as $asset) {
+        $path_parts = pathinfo($asset);
+        if (!in_array($asset, $save) && strpos_arr($asset, $preloadAssets) !== false) {
+          add_action(
+            'wp_head',
+            function () use ($path, $asset, $path_parts) {
+              echo '<link rel="preload" href="' . $path . '/dist/' . $asset . '" as="' . ($path_parts['extension'] === 'woff' || $path_parts['extension'] === 'woff2' ? 'font' : 'image') . '" />';
+            }
+          );
+          array_push($save, $asset);
         }
       }
     }
   }
+  // }
 }
 
 
@@ -62,8 +77,8 @@ function enqueue_scripts()
   add_action('wp_enqueue_scripts', function () {
     $path = get_template_directory_uri();
 
+    addPreload();
     if (WP_ENV !== 'development') {
-      addPreload();
       // get file name from manifest
       $config = getManifest();
       $files = get_object_vars($config);

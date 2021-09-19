@@ -16,7 +16,7 @@ function prefetch_images($hero)
   $imagePath = str_replace($hero[0]['image']['filename'], '', $relativePath);
   // get image name and extension
   $split = explode('.', $hero[0]['image']['filename']);
-  $sizes = [[1400, 800], [1000, 600], [600, 550]];
+  $sizes = [[1400, 800], [1000, 600], [600, 550], [400, 550]];
   foreach ($sizes as $key => $value) {
     $op = new \Timber\Image\Operation\Resize($value[0], $value[1], 'default');
     $imageName = $op->filename($split[0], $split[1]);

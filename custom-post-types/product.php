@@ -53,7 +53,7 @@ function custom_post_type()
     'show_ui' => true,
     // 'show_in_menu' => true,
     // 'show_in_nav_menus' => true,
-    'hierarchical' => true, 'show_tagcloud' => false, 'show_admin_column' => true,             'show_in_rest' => false,
+    'hierarchical' => true, 'show_tagcloud' => false, 'show_admin_column' => true,             'show_in_rest' => true,
   ]);
   //    add_theme_support( 'post-thumbnails', array( 'models' ) );
 }

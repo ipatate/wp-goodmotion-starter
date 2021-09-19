@@ -6,7 +6,7 @@
 	</head>
 {% endblock %}
 
-	<body class="{{body_class}} {% if not post.meta("page_hero") %}no-hero{% endif %}" data-template="base.twig">
+	<body class="{{body_class}} {% if not post.meta("page_hero") %}no-hero{% endif %} page-istop page-isup" data-template="base.twig">
 		<a class="font-bold skip-link screen-reader-text" href="#content">{{ _e( 'Skip to content') }}</a>
     {% include 'header.twig' %}
         {% include 'partial/hero.twig' %}
@@ -28,9 +28,5 @@
       {% include 'footer.twig' %}
 			{{ function('wp_footer') }}
 		{% endblock %}
-     <link
-      href="https://fonts.googleapis.com/css2?family=Norican&display=swap"
-      rel="stylesheet"
-    />
 	</body>
 </html>

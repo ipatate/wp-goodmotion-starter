@@ -42,6 +42,12 @@
           <div>
             <picture>
               <source
+                media="(max-width: 400px)"
+                srcset="{{Image(item.image).src|resize(400, 550)|tojpg}}"
+                type="image/jpeg"
+              />
+              <source media="(max-width: 400px)" srcset="{{Image(item.image).src|resize(400, 550)|tojpg|towebp}}" type="image/webp">
+              <source
                 media="(max-width: 600px)"
                 srcset="{{Image(item.image).src|resize(600, 550)|tojpg}}"
                 type="image/jpeg"
