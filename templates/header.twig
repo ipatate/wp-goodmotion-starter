@@ -1,12 +1,51 @@
-<header class="gm-header" >
+<header class="gm-header">
   {% block header %}
-    <div class="wrapper">
-      <h1 class="gm-logo" role="banner">
-        <a class="gm-logo-link" href="{{site.url}}" rel="home"><span>{{site.name}}</span></a>
-      </h1>
-      <nav id="nav-main" class="gm-nav-main" role="navigation" aria-label="{{ __('Primary nav', 'goodmotion-theme') }}">
-        {% include "menu.twig" with {'items': menu.get_items, 'home_url': home_url} %}
-      </nav>
+  <div class="wrapper">
+    <h1 class="gm-logo" role="banner">
+      <a
+        class="gm-logo-link"
+        href="{{ site.url }}"
+        rel="home"
+        title="{{ site.name }}"
+      >
+        {% set logoSmall = theme.link ~ '/assets/media/logo_mercredi_blanc-sm'
+        %} {% set logo = theme.link ~ '/assets/media/logo_mercredi_blanc' %}
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="{{logoSmall ~ '.webp' |resize(130)}}"
+            type="image/webp"
+            width="130"
+            height="50"
+          />
+          <source
+            media="(max-width: 600px)"
+            srcset="{{logoSmall ~ '.png' |resize(130)}}"
+            type="image/png"
+            width="130"
+            height="50"
+          />
+          <source srcset="{{logo ~ '.webp' |resize(170)}}" type="image/webp" />
+          <img
+            src="{{logo ~ '.png' |resize(170)}}"
+            alt="{{ site.name }}"
+            type="image/png"
+            width="170"
+            height="65"
+            loading="eager"
+          />
+        </picture>
+      </a>
+    </h1>
+    <nav
+      id="nav-main"
+      class="gm-nav-main"
+      role="navigation"
+      aria-label="{{ __('Primary nav', 'goodmotion-theme') }}"
+    >
+      {% include "menu.twig" with {'items': menu.get_items, 'home_url':
+      home_url} %}
+    </nav>
     <div class="gm-nav-button">
       <button
         type="button"
@@ -19,6 +58,6 @@
         <span></span>
       </button>
     </div>
-    </div>
+  </div>
   {% endblock %}
 </header>

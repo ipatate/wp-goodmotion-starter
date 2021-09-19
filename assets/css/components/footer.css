@@ -3,7 +3,7 @@
 }
 
 .gm-footer .gm-wrapper {
-  @apply flex flex-col items-stretch text-white min-h-[300px] px-2 lg:px-12 pt-8 pb-3 w-full mx-auto max-w-screen-2xl;
+  @apply flex flex-col items-stretch text-white min-h-[300px] px-2 lg:px-12 pt-8 pb-3 w-full mx-auto;
 }
 
 .gm-footer .gm-wrapper > div {
