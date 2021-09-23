@@ -5,6 +5,7 @@ import initHeader from './scroll'
 import initHero from './hero'
 import initCarousel from './carousel'
 import initObserver from './observer'
+import initMenu from './menu'
 
 function main() {
   // header
@@ -17,6 +18,8 @@ function main() {
   initCarousel()
 
   initObserver()
+
+  initMenu()
 
   const lazyLoadInstance = new LazyLoad({})
 }

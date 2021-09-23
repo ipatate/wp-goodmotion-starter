@@ -1,13 +1,13 @@
 .wp-block-goodmotion-gm-block-img-txt {
-  @apply bg-no-repeat flex flex-1 bg-cover bg-no-repeat bg-center h-96 relative min-h-[400px];
+  @apply bg-no-repeat flex flex-1 bg-cover bg-center h-96 relative min-h-[400px];
 }
 
 .wp-block-goodmotion-gm-block-img-txt .gm-img-text-content {
-  @apply flex items-center justify-center no-underline absolute top-0 bottom-0 left-0 right-0;
+  @apply absolute top-0 bottom-0 left-0 right-0 flex items-center justify-center no-underline;
 }
 
 .wp-block-goodmotion-gm-block-img-txt .gm-img-text-content::after {
-  @apply absolute bg-gray-800 top-0 bottom-0 left-0 right-0 opacity-30 transition;
+  @apply absolute top-0 bottom-0 left-0 right-0 transition bg-gray-800 opacity-30;
   content: '';
 }
 
@@ -16,5 +16,5 @@
 }
 
 .wp-block-goodmotion-gm-block-img-txt .gm-img-text-content span {
-  @apply text-white font-bold text-2xl relative z-10
+  @apply relative z-10 text-2xl font-bold text-white;
 }

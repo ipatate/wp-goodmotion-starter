@@ -25,14 +25,39 @@
   @apply text-gray-100;
 }
 
-.has-white-color h1, .has-white-color h2, .has-white-color h3, .has-white-color h4, .has-white-color h5, .has-white-color h6 {
+.has-accent-border {
+  @apply border-accent;
+}
+.has-white-border {
+  @apply border-white;
+}
+.has-gray-border {
+  @apply border-gray-300;
+}
+
+.has-white-color h1,
+.has-white-color h2,
+.has-white-color h3,
+.has-white-color h4,
+.has-white-color h5,
+.has-white-color h6 {
   @apply text-white;
 }
 
-.has-accent-color h1, .has-accent-color h2, .has-accent-color h3, .has-accent-color h4, .has-accent-color h5, .has-accent-color h6{
+.has-accent-color h1,
+.has-accent-color h2,
+.has-accent-color h3,
+.has-accent-color h4,
+.has-accent-color h5,
+.has-accent-color h6 {
   @apply text-accent;
 }
 
-.has-gray-color h1, .has-gray-color h2, .has-gray-color h3, .has-gray-color h4, .has-gray-color h5, .has-gray-color h6{
+.has-gray-color h1,
+.has-gray-color h2,
+.has-gray-color h3,
+.has-gray-color h4,
+.has-gray-color h5,
+.has-gray-color h6 {
   @apply text-gray-100;
 }

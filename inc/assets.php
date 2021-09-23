@@ -54,6 +54,54 @@ function addPreload()
   // }
 }
 
+function addScript()
+{
+  $path = get_template_directory_uri();
+
+  addPreload();
+  if (WP_ENV !== 'development') {
+    // get file name from manifest
+    $config = getManifest();
+    $files = get_object_vars($config);
+    // set polyfill on first
+    //            foreach ($files as $key => $value) {
+    //              if($key === 'vite/legacy-polyfills') {
+    //                $file = $config->{$key}->file;
+    //                // get token file
+    //                $k = explode('.', $file);
+    //                $token = $k[1];
+    //                wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
+    //              }
+    //            }
+
+    foreach ($files as $key => $value) {
+      //              if($key !== 'vite/legacy-polyfills') {
+      $file = $config->{$key}->file;
+
+      // get token file
+      $k = explode('.', $file);
+      $token = $k[1];
+      wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
+      //              }
+    }
+  } else {
+
+    wp_enqueue_script('goodmotion-starter-theme', 'http://localhost:3000/main.js', [
+      //                'wp-block-editor',
+      //                'wp-blocks',
+      //                'wp-editor',
+      //                'wp-components',
+      //                'wp-compose',
+      //                'wp-data',
+      //                'wp-element',
+      //                'wp-hooks',
+      //                'wp-i18n',
+      //                'wp-blocks',
+      //                'wp-i18n',
+      //                'wp-element',
+    ]);
+  }
+}
 
 
 /**
@@ -74,53 +122,7 @@ function enqueue_scripts()
     return $tag;
   }, 10, 3);
 
-  add_action('wp_enqueue_scripts', function () {
-    $path = get_template_directory_uri();
-
-    addPreload();
-    if (WP_ENV !== 'development') {
-      // get file name from manifest
-      $config = getManifest();
-      $files = get_object_vars($config);
-      // set polyfill on first
-      //            foreach ($files as $key => $value) {
-      //              if($key === 'vite/legacy-polyfills') {
-      //                $file = $config->{$key}->file;
-      //                // get token file
-      //                $k = explode('.', $file);
-      //                $token = $k[1];
-      //                wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
-      //              }
-      //            }
-
-      foreach ($files as $key => $value) {
-        //              if($key !== 'vite/legacy-polyfills') {
-        $file = $config->{$key}->file;
-
-        // get token file
-        $k = explode('.', $file);
-        $token = $k[1];
-        wp_enqueue_script('goodmotion-starter-theme-' . $token, $path . '/dist/' . $file, array(), $token, true);
-        //              }
-      }
-    } else {
-
-      wp_enqueue_script('goodmotion-starter-theme', 'http://localhost:3000/main.js', [
-        //                'wp-block-editor',
-        //                'wp-blocks',
-        //                'wp-editor',
-        //                'wp-components',
-        //                'wp-compose',
-        //                'wp-data',
-        //                'wp-element',
-        //                'wp-hooks',
-        //                'wp-i18n',
-        //                'wp-blocks',
-        //                'wp-i18n',
-        //                'wp-element',
-      ]);
-    }
-  });
+  add_action('wp_enqueue_scripts', __NAMESPACE__ . '\addScript');
 }
 
 

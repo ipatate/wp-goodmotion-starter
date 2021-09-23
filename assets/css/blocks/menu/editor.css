@@ -1,0 +1,7 @@
+.wp-block-goodmotion-block-menu .gm-menus-list {
+  @apply overflow-x-scroll;
+}
+
+.wp-block-goodmotion-block-menu .gm-menus-list > div {
+  @apply flex;
+}
