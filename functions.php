@@ -31,6 +31,7 @@ require_once(dirname(__FILE__) . '/inc/acf.php');
 require_once(dirname(__FILE__) . '/inc/acf_config.php');
 require_once(dirname(__FILE__) . '/custom-post-types/event.php');
 require_once(dirname(__FILE__) . '/custom-post-types/product.php');
+require_once(dirname(__FILE__) . '/custom-post-types/menu.php');
 
 /**
  * This ensures that Timber is loaded and available as a PHP class.
