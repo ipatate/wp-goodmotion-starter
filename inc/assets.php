@@ -111,11 +111,11 @@ function enqueue_scripts()
 {
   add_filter('script_loader_tag', function ($tag, $handle, $src) {
     if (strpos($handle, 'goodmotion-starter-theme') === false) {
-      if (is_admin()) {
-        return $tag;
-      } else {
-        return str_replace(' src', ' async src', $tag);
-      }
+      // if (is_admin()) {
+      return $tag;
+      // } else {
+      //   return str_replace(' src', ' async src', $tag);
+      // }
     }
     // change the script tag by adding type="module" and return it.
     $tag = '<script type="module" crossorigin src="' . esc_url($src) . '"></script>';
@@ -175,7 +175,25 @@ function removeJquery()
   }
 }
 
+/**
+ * Completely remove assets from plugin block leaflet if isn't in page
+ */
+function disableLeafletAsset()
+{
+  $id = get_the_ID();
+  if (!has_block('map-block-leaflet/map-block-leaflet', $id)) {
+    wp_dequeue_script('lib-js-map-block-leaflet');
+    wp_dequeue_script('lib-js-map-block-leaflet-cluster');
+    wp_dequeue_script('js-editor-map-block-leaflet');
 
+    wp_dequeue_style('css-editor-map-block-leaflet');
+    wp_dequeue_style('lib-css-map-block-leaflet');
+    wp_dequeue_style('lib-css-map-block-leaflet-cluster');
+  }
+}
+
+
+add_action('wp_enqueue_scripts', __NAMESPACE__ . '\disableLeafletAsset');
 add_action('init', __NAMESPACE__ . '\removeJquery');
 add_action('init', __NAMESPACE__ . '\enqueue_scripts');
 add_action('init', __NAMESPACE__ . '\enqueue_styles');

@@ -16,4 +16,5 @@
 @import 'components/components.css';
 
 /** BLOCK **/
+@import 'block-wp.css';
 @import 'blocks/blocks.css';

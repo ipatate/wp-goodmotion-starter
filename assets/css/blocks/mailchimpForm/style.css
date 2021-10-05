@@ -1,0 +1,76 @@
+.gm-mailchimp-form {
+  @apply max-w-4xl mx-auto;
+}
+
+.gm-mailchimp-form form {
+  @apply flex flex-col;
+}
+
+.gm-mailchimp-form form label {
+  @apply flex flex-col my-2;
+}
+.gm-mailchimp-form form input {
+  @apply border-gray-400 rounded;
+}
+
+.gm-mailchimp-form form input:disabled {
+  @apply opacity-40;
+}
+
+.gm-mailchimp-form form label.inline-field {
+  @apply flex flex-row-reverse items-center justify-items-start;
+}
+
+.gm-mailchimp-form form label.inline-field span {
+  @apply flex-1;
+}
+
+.gm-mailchimp-form form label.inline-field input {
+  @apply mr-2;
+}
+
+.gm-mailchimp-form form label.beer-field {
+  @apply absolute top-[-10000px] left-[-3000px];
+}
+
+.gm-mailchimp-form form input[type='submit'] {
+  @apply px-4 py-2 mt-5 font-bold text-white rounded bg-accent;
+}
+
+.gm-mailchimp-form-status {
+  @apply fixed top-0 right-0 bottom-0 left-0 z-50 bg-[rgba(0,0,0,.3)] flex items-center justify-center transition-all duration-300 ease-in-out;
+}
+
+.gm-mailchimp-form-status-hidden {
+  @apply h-0 overflow-hidden opacity-0;
+}
+
+.gm-mailchimp-form-modal {
+  @apply flex flex-col items-center justify-center p-6 mx-auto leading-5 text-center text-gray-600 transition-all duration-300 ease-in-out bg-white rounded-lg shadow-lg w-96;
+}
+
+.gm-mailchimp-form-modal-hidden {
+  @apply w-0 h-0 m-0 overflow-hidden opacity-0;
+}
+
+.gm-mailchimp-form-success svg {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.gm-mailchimp-form-success svg path {
+  stroke: green;
+  stroke-dashoffset: 745.74853515625;
+  stroke-dasharray: 745.74853515625;
+  animation: dash 2s ease-out forwards;
+
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 745.74853515625;
+    }
+    100% {
+      stroke-dashoffset: 0;
+    }
+  }
+}

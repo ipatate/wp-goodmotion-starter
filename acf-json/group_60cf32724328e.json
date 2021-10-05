@@ -22,6 +22,27 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_614c8b839d3d3",
+            "label": "Order",
+            "name": "product_order",
+            "type": "number",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": ""
+        },
+        {
             "key": "field_60efd8856a77a",
             "label": "Price",
             "name": "product_price",
@@ -400,12 +421,12 @@
         ]
     ],
     "menu_order": 0,
-    "position": "normal",
+    "position": "acf_after_title",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1626340300
+    "modified": 1632406447
 }

@@ -5,3 +5,10 @@
 .wp-block-goodmotion-block-menu .gm-menus-list > div {
   @apply flex;
 }
+
+.wp-block-goodmotion-block-menu
+  .gm-menus-list-element
+  .gm-menus-list-element-title {
+  @apply font-sherif;
+  font-size: 2.4rem;
+}

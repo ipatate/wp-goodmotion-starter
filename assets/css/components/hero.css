@@ -32,7 +32,7 @@
 }
 
 .gm-hero-wrapper-page {
-  @apply mb-12 md:mb-20;
+  @apply mb-12 lg:mb-20;
 }
 
 .gm-hero-wrapper-page .gm-hero > div {
@@ -40,7 +40,7 @@
 }
 
 .gm-hero-wrapper-page .gm-hero > div > div > div picture {
-  @apply relative md:top-[-20vh];
+  @apply relative;
 }
 
 .gm-hero > div > div {
@@ -123,7 +123,7 @@
 }
 
 .hero_content h2 {
-  @apply mx-0 mb-3 text-3xl font-bold text-white md:text-7xl;
+  @apply mx-0 mb-3 text-5xl font-bold text-white md:text-7xl;
 }
 
 .hero_content p {

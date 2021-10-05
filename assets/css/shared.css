@@ -85,3 +85,22 @@ h6 {
 
 .gm-is-inner {
 }
+
+/**  .wp-block-media-text */
+@media screen and (max-width: 1024px) {
+  .wp-block-media-text.gm-menu {
+    grid-template-columns: 100% !important;
+  }
+
+  .wp-block-media-text.gm-menu .wp-block-media-text__media {
+    grid-column: 1 !important;
+    filter: grayscale(1);
+    grid-row: 1;
+    opacity: 0.3;
+  }
+
+  .wp-block-media-text.gm-menu .wp-block-media-text__content {
+    grid-column: 1;
+    grid-row: 1;
+  }
+}

@@ -45,6 +45,7 @@
     "vite-plugin-live-reload": "^2.1.0"
   },
   "dependencies": {
+    "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/typography": "^0.4.1",
     "@vitejs/plugin-legacy": "^1.4.4",
     "axios": "^0.21.1",

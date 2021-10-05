@@ -1,5 +1,5 @@
 .gm-menus {
-  @apply relative px-2 my-12 w-screen md:w-[660px] mx-auto;
+  @apply relative w-[96%] max-w-full p-0 mx-auto my-20;
 }
 
 .gm-menus .gm-menus-title {
@@ -7,23 +7,34 @@
 }
 
 .gm-menus-list {
-  @apply w-full md:w-[500px] mx-auto h-[600px];
+  @apply w-full md:w-[550px] mx-auto;
+}
+
+.gm-menus-list > div {
+  @apply flex items-stretch;
 }
 
 .gm-menus-list-element {
-  @apply relative flex flex-col items-center justify-start min-w-full w-full p-4 h-[600px];
+  @apply relative flex flex-col items-center flex-1 w-full h-auto min-w-full min-h-full p-8 md:p-12;
 }
 
 .gm-menus-list-element .gm-menus-list-element-title {
-  @apply my-12 text-5xl text-center;
+  @apply mt-6 text-5xl text-center md:mt-12;
 }
 
 .gm-menus-list-element .gm-menus-list-element-content {
-  @apply mt-4 text-lg;
+  @apply mt-4 text-base;
+}
+.gm-menus-list-element .gm-menus-list-element-content hr {
+  @apply mx-auto my-6;
+}
+
+.gm-menus-list-element .gm-menus-list-element-content ul {
+  @apply my-1;
 }
 
 .gm-menus-list-element .gm-menus-list-element-content li {
-  @apply my-0.5;
+  @apply my-0 text-base;
 }
 
 .gm-menu-border-top {

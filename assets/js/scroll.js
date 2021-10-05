@@ -1,7 +1,7 @@
 let posY = 0
 const body = document.body
 const initHeader = () => {
-  window.addEventListener('scroll', scrollDirectionChange)
+  window.addEventListener('scroll', scrollDirectionChange, { passive: true })
   scrollDirectionChange()
 }
 
